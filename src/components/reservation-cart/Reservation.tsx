@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
-import CustomSelect from "../reusableComponent/CustomSelect";
 import AgeSelect, { SelectTypes } from "../reusableComponent/AgesSelect";
 import defaultimg from "@/public/defaultimg.webp";
 

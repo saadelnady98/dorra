@@ -25,7 +25,7 @@ const OurBranches = async ({ data }: BranchProps) => {
 
           {/* Branches Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
-            {data?.map((branch) => (
+            {data?.map((branch, index) => (
               <div
                 key={branch?.id}
                 className="bg-white bg-opacity-5 border border-white border-opacity-20 rounded-2xl md:rounded-3xl p-2 md:p-4 !pb-0 overflow-hidden"
@@ -38,7 +38,9 @@ const OurBranches = async ({ data }: BranchProps) => {
                     width={700}
                     height={600}
                     className="object-cover rounded-lg w-full h-full"
-                    
+                    loading="eager"
+                    quality={75}
+                    priority={index === 0}
                   />
                 </div>
 
@@ -61,6 +63,7 @@ const OurBranches = async ({ data }: BranchProps) => {
                           width={12}
                           height={12}
                           className="object-contain w-full h-full"
+                          unoptimized
                         />
                       </div>
 

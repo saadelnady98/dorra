@@ -6,7 +6,7 @@ import Container from "@/components/reusableComponent/Container";
 import qq from "@/public/qq.svg";
 import { Icon } from "@iconify/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import defaultimg from "@/public/defaultimg.webp";
+import userImage from "@/public/user.webp";
 // import "swiper/css";
 // import "swiper/css/free-mode";
 // import "swiper/css/navigation";
@@ -91,10 +91,13 @@ function Feedback({ data }: { data: any }) {
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl overflow-hidden ltr:mr-3 rtl:ml-3">
                           <Image
                             // src={header}
-                            src={item?.image?.original_url || defaultimg}
+                            src={item?.image?.original_url ?? userImage}
                             alt={item?.name || "أحمد العتيبي"}
                             width={200}
                             height={200}
+                            loading="eager"
+                            quality={75}
+                            priority={index < 3}
                             className="object-cover w-full h-full"
                           />
                         </div>
@@ -118,6 +121,7 @@ function Feedback({ data }: { data: any }) {
                           alt="Shopping Bag"
                           width={20}
                           height={20}
+                          unoptimized
                           className="object-contain w-full h-full"
                         />
                         {/* </div> */}

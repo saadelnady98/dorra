@@ -23,10 +23,12 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
     >
       {/* Background Image */}
       <Image
-        src={service?.image?.original_url || header}
+        src={service?.image?.original_url ?? header}
         alt={service.name || "Service image"}
         width={600}
         height={500}
+        loading="eager"
+        quality={75}
         className="object-cover w-full h-full"
       />
 

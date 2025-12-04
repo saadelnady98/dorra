@@ -8,7 +8,7 @@ import trash from "@/public/trashc.svg";
 import calendar from "@/public/calendar.svg";
 import hotelIcon from "@/public/hotel.svg";
 import profile from "@/public/profile.svg";
-import { formatDateRange, formatDateToMonthDay } from "@/lib/utils";
+import { formatDateRange } from "@/lib/utils";
 import ReservationModal from "../reusableComponent/ReservationModal";
 import Trash from "../reservation-cart/Trash";
 import defaultimg from "@/public/defaultimg.webp";
@@ -101,11 +101,11 @@ function CartRooms() {
           <div key={index} className="flex flex-col rounded-3xl">
             <div className="flex flex-col md:flex-row p-4 gap-7 border-b border-[#ffffff20]">
               <Image
-                src={item?.images?.[0]?.original_url || defaultimg}
+                src={item?.images?.[0]?.original_url ?? defaultimg}
                 width={500}
                 height={500}
                 alt={item?.room_type?.name || "room"}
-                className="aspect-[1/1] w-full md:max-w-[180px] object-cover rounded-3xl"
+                className="  w-full md:max-w-[180px] object-cover rounded-3xl"
               />
 
               <div className="flex flex-col justify-around gap-4 w-full">
@@ -127,6 +127,7 @@ function CartRooms() {
                           width={50}
                           height={50}
                           alt="edit"
+                          unoptimized
                         />
                       </div>
                       <div
@@ -143,6 +144,7 @@ function CartRooms() {
                           width={50}
                           height={50}
                           alt="delete"
+                          unoptimized
                         />
                       </div>
                     </div>
@@ -155,6 +157,7 @@ function CartRooms() {
                       height={50}
                       alt="calendar"
                       className="w-5 h-5"
+                      unoptimized
                     />
                     <span className="text-white text-sm lg:text-base">
                       {item?.hotel.name}- {item?.hotel?.address}
@@ -167,6 +170,7 @@ function CartRooms() {
                       height={50}
                       alt="calendar"
                       className="w-5 h-5"
+                      unoptimized
                     />
                     <span className="text-white text-sm lg:text-base">
                       {formatDateRange(
@@ -184,6 +188,7 @@ function CartRooms() {
                       height={50}
                       alt="profile"
                       className="w-5 h-5"
+                      unoptimized
                     />
                     <span className="text-white text-sm lg:text-base">
                       {item?.adults} {t("adults")} - {item?.ages?.length}{" "}

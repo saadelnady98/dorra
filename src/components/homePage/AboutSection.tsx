@@ -52,6 +52,7 @@ const AboutSection = async ({
                   width={42}
                   height={9}
                   className="object-cover w-full"
+                  unoptimized
                 />
               </div>
               <h2 className="text-[#CAB16C] text-sm lg:text-2xl">

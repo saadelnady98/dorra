@@ -1,7 +1,3 @@
-import img2 from "@/public/Bag.svg";
-import Image from "next/image";
-
-import title from "@/public/title.svg";
 import SectionTitle from "../reusableComponent/SectionTitle";
 
 const OurVision = ({ data, className }: { data: any; className?: string }) => {
