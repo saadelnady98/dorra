@@ -5,28 +5,12 @@ import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInput from "@/components/ui/CustomInput";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import CostumPhoneInput from "@/components/reusableComponent/PhoneInput";
-import MainButton from "@/components/reusableComponent/MainButton";
 import { useMutation } from "@tanstack/react-query";
 import apiServiceCall from "@/lib/apiServiceCall";
 import CustomTextarea from "../ui/CustomTextarea";
-import { useLocale } from "next-intl";
-
-const baseSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Invalid email format"),
-  phone: z.string().min(1, "Phone number is required"),
-});
-
-const withMessageSchema = baseSchema.extend({
-  message: z.string().optional(),
-});
-
-const getFormSchema = (withMessage: boolean) => {
-  return withMessage ? withMessageSchema : baseSchema;
-};
+import { toast } from "react-hot-toast";
 
 const ContactForm = ({
   btnAlignEnd,
@@ -36,71 +20,91 @@ const ContactForm = ({
   withMessage?: boolean;
 }) => {
   const t = useTranslations("ContactUsSection");
-  const locale = useLocale(); // Get current locale
+  const te = useTranslations("contactErrors");
+  const locale = useLocale();
 
-  // Dynamically set the form schema based on withMessage prop
-  const formSchema = getFormSchema(!!withMessage);
+  // BASE SCHEMA
+  const baseSchema = z.object({
+    firstName: z.string().min(1, te("first_name_required")),
+    lastName: z.string().min(1, te("last_name_required")),
+    email: z.string().email(te("email_invalid")),
+    phone: z.string().min(1, te("phone_required")),
+  });
+
+  const withMessageSchema = baseSchema.extend({
+    message: z.string().min(1, te("message_required")).optional(),
+  });
+
+  const formSchema = withMessage ? withMessageSchema : baseSchema;
+
   type FormData = z.infer<typeof formSchema>;
 
   const {
     register,
     control,
-    watch,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
 
-  const { mutate, isError, isSuccess, error } = useMutation({
+  // 🔥 Mutation with toast notifications
+  const { mutate, isPending } = useMutation({
     mutationFn: (data) =>
       apiServiceCall({ url: "contacts", body: data, method: "POST" }),
+    onSuccess: () => {
+      toast.success(t("sent_success"));
+      reset();
+    },
+    onError: (error: any) => {
+      toast.error(error?.errors?.message || t("something_wrong"));
+    },
   });
 
   const onSubmit = (data: any) => {
-    const submissionData = !withMessage && data.message
-      ? { ...data, message: undefined }
-      : data;
-      
+    const submissionData =
+      !withMessage && data.message ? { ...data, message: undefined } : data;
+
     mutate(submissionData);
   };
 
   return (
     <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+      {/* Name fields */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <CustomInput
           label={t("first_name")}
           name="firstName"
-          placeholder=""
           register={register}
           error={errors.firstName?.message}
           locale={locale}
         />
+
         <CustomInput
           label={t("last_name")}
           name="lastName"
-          placeholder=""
           register={register}
           error={errors.lastName?.message}
           locale={locale}
         />
       </div>
 
+      {/* Email */}
       <CustomInput
         label={t("email")}
         name="email"
         type="email"
-        placeholder=""
         register={register}
         error={errors.email?.message}
         locale={locale}
       />
 
+      {/* Phone */}
       <Controller
         name="phone"
         control={control}
         defaultValue=""
-        rules={{ required: t("phone_required") }}
         render={({ field }) => (
           <CostumPhoneInput
             className="mt-5"
@@ -108,55 +112,37 @@ const ContactForm = ({
             value={field.value}
             onChange={field.onChange}
             locale={locale}
+            errMessage={errors.phone?.message}
           />
         )}
       />
-      {errors.phone && (
-        <p className={`text-red-500 text-sm mt-1 ${locale === 'ar' ? 'text-right' : 'text-left'}`}>
-          {errors.phone.message}
-        </p>
-      )}
 
+      {/* Message Textarea */}
       {withMessage && (
         <CustomTextarea
           label={t("message")}
           name="message"
-          placeholder=""
           register={register}
           error={errors.message?.message}
           locale={locale}
         />
       )}
 
-      {errors?.message && (
-        <p className={`text-red-500 text-sm mt-1 ${locale === 'ar' ? 'text-right' : 'text-left'}`}>
-          {errors?.message?.message}
-        </p>
-      )}
-      {isError && error && (
-        <p className={`text-red-500 text-sm mt-1 ${locale === 'ar' ? 'text-right' : 'text-left'}`}>
-          {error?.message || "something went wrong please try again"}
-        </p>
-      )}
-      {isSuccess && (
-        <p className={`text-green-500 text-sm mt-1 ${locale === 'ar' ? 'text-right' : 'text-left'}`}>
-          {"sent success"}
-        </p>
-      )}
-
-      {/* Button */}
+      {/* Submit Button */}
       <div
         className={`mt-7 lg:mt-10 w-full flex items-center ${
           btnAlignEnd ? "justify-end" : "justify-center"
         }`}
       >
-        <MainButton
-          className={btnAlignEnd ? "w-fit" : "w-full"}
+        <button
+          className={`inline-block font-bold items-center max-lg:text-[16px] justify-center h-[48px] px-5 lg:px-9 bg-white text-[#CAB16C] rounded-[40px] hover:bg-[#CAB16C] hover:text-white transition-colors ${
+            isPending ? "cursor-not-allowed" : ""
+          }`}
           type="submit"
-          styleMe
+          disabled={isPending}
         >
-          {t("send")}
-        </MainButton>
+          {isPending ? t("loading") : t("send")}
+        </button>
       </div>
     </form>
   );

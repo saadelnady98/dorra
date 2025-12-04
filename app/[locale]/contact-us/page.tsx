@@ -118,7 +118,6 @@ const formatContactLink = (info: string, type?: string) => {
                       width={50}
                       height={50}
                       className="object-cover w-8 h-8"
-                      unoptimized
                     />
                   </Link>
                 )

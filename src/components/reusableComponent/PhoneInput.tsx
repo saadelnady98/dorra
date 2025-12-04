@@ -19,6 +19,7 @@ const CostumPhoneInput = ({
   className,
   value,
   onChange,
+  errMessage,
   locale = "en",
 }: Iprops) => {
   const t = useTranslations("ContactUsSection");
@@ -71,6 +72,7 @@ const CostumPhoneInput = ({
         />
       </div>
       {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      {errMessage && <p className="text-red-500 text-sm mt-1">{errMessage}</p>}
     </div>
   );
 };

@@ -102,7 +102,10 @@
     "phone_number": "Phone Number",
     "phone_required": "This field is required",
     "invalid_phone": "Invalid phone number",
-    "send": "Send"
+    "send": "Send",
+    "loading": "Loading",
+    "something_wrong": "Something went wrong",
+    "sent_success": "Message sent successfully"
   },
   "SingleHotelPage": {
     "rate": "Rate",
@@ -353,5 +356,14 @@
     "cannotRecover": "You will not be able to recover them after deletion.",
     "cancel": "Cancel",
     "deleteRooms": "Delete Rooms"
+  },
+  "contactErrors": {
+    "first_name_required": "First name is required",
+    "last_name_required": "Last name is required",
+    "email_invalid": "Invalid email format",
+    "phone_required": "Phone number is required",
+    "message_required": "Message is required",
+    "loading": "Loading",
+    "send": "Send"
   }
 }
