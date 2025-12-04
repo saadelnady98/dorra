@@ -5,7 +5,7 @@ import MainLink from "@/components/reusableComponent/MainLink";
 import { Icon } from "@iconify/react";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import { getTranslations } from "next-intl/server";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 

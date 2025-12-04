@@ -6,7 +6,7 @@ import Guests from "./Gustes";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import building from "@/public/building.svg";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";

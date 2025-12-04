@@ -1,6 +1,6 @@
 "use client";
 
-import room from "@/public/card.png";
+import room from "@/public/card.webp";
 import Container from "@/components/reusableComponent/Container";
 import MainButton from "@/components/reusableComponent/MainButton";
 import Image from "next/image";
@@ -9,10 +9,10 @@ import { useTranslations } from "next-intl";
 import { Icon } from "@iconify/react";
 import HotelImageGrid from "../reusableComponent/HotelImageGrid";
 import ImageModal from "../reusableComponent/ImageModal";
-import pic1 from "@/public/card.png";
-import pic5 from "@/public/card.png";
+import pic1 from "@/public/card.webp";
+import pic5 from "@/public/card.webp";
 import ReservationModal from "../reusableComponent/ReservationModal";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import RoomCardSkeleton from "./RoomCardSkeleton";
 
 const Rooms = ({

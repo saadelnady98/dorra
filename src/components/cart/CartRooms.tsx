@@ -11,7 +11,7 @@ import profile from "@/public/profile.svg";
 import { formatDateRange, formatDateToMonthDay } from "@/lib/utils";
 import ReservationModal from "../reusableComponent/ReservationModal";
 import Trash from "../reservation-cart/Trash";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";

@@ -3,7 +3,7 @@ import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
 import { getServicesData, getSingleBlogData } from "@/lib/serverActions";
 import HomeSlider from "@/components/homePage/HomeSlider";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {

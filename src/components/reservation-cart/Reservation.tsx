@@ -7,7 +7,7 @@ import { IoChevronDown } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import CustomSelect from "../reusableComponent/CustomSelect";
 import AgeSelect, { SelectTypes } from "../reusableComponent/AgesSelect";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 const options: SelectTypes[] = Array.from({ length: 18 }, (_, i) => ({
   value: i.toString(),

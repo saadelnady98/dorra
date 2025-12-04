@@ -1,11 +1,11 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import ImageSlider from "../singleHotelPage/ImageSlider";
-import pic1 from "@/public/card.png";
-import pic2 from "@/public/card.png";
-import pic3 from "@/public/card.png";
-import pic4 from "@/public/card.png";
-import pic5 from "@/public/card.png";
+import pic1 from "@/public/card.webp";
+import pic2 from "@/public/card.webp";
+import pic3 from "@/public/card.webp";
+import pic4 from "@/public/card.webp";
+import pic5 from "@/public/card.webp";
 
 interface ImageModalProps {
   images: any[];

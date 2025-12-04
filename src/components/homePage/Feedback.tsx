@@ -6,7 +6,7 @@ import Container from "@/components/reusableComponent/Container";
 import qq from "@/public/qq.svg";
 import { Icon } from "@iconify/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 // import "swiper/css";
 // import "swiper/css/free-mode";
 // import "swiper/css/navigation";
@@ -22,7 +22,7 @@ function Feedback({ data }: { data: any }) {
   // comment: "dfdf"
   // date: "2025-02-03"
   // id: 1
-  // image: {id: 17, file_name: 'image-5.png', original_url: 'https://api-dorrataiba.tetane.com/media/17/image-5.png', extension: 'png', size: 163446}
+  // image: {id: 17, file_name: 'image-5.webp', original_url: 'https://api-dorrataiba.tetane.com/media/17/image-5.webp', extension: 'png', size: 163446}
   // name: "fdfd"
 
   return (

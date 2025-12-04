@@ -2,12 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Container from "@/components/reusableComponent/Container";
 import MainLink from "@/components/reusableComponent/MainLink";
-import { Icon } from "@iconify/react";
-import card from "@/public/card.png";
+import card from "@/public/card.webp";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import { getTranslations } from "next-intl/server";
 import loacation from "@/public/loacation.svg";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 interface BranchProps {
   data: any;
@@ -34,13 +33,12 @@ const OurBranches = async ({ data }: BranchProps) => {
                 {/* Image */}
                 <div className="relative h-[250px] 2xl:h-[300px] mb-4 md:mb-6">
                   <Image
-                    src={branch?.image?.original_url || defaultimg}
-                    // src={card}
+                    src={branch?.image?.original_url ?? card}
                     alt={"branch"}
-                    fill
-                    //   width={700}
-                    //   height={600}
+                    width={700}
+                    height={600}
                     className="object-cover rounded-lg w-full h-full"
+                    
                   />
                 </div>
 

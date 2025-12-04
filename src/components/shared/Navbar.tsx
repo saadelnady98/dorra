@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import Image from "next/image";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 // import { Icon } from "@iconify/react";
 // import menu from "../../public/assets/menu.svg";
 import { usePathname } from "next/navigation";

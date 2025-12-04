@@ -1,5 +1,5 @@
 import Image from "next/image";
-import defaultimg from "@/public/defaultimg.png";
+import header from "@/public/header.webp";
 
 import MainLink from "../reusableComponent/MainLink";
 
@@ -23,7 +23,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
     >
       {/* Background Image */}
       <Image
-        src={service?.image?.original_url || defaultimg}
+        src={service?.image?.original_url || header}
         alt={service.name || "Service image"}
         width={600}
         height={500}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "../reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
 import location from "@/public/loacation.svg";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 const NearbyLandmarks = async ({ data }: any) => {
   const t = await getTranslations("NearbyLandmarks");

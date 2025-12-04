@@ -1,4 +1,4 @@
-import defaultImg from "@/public/defaultimg.png";
+import defaultImg from "@/public/defaultimg.webp";
 import Image from "next/image";
 import SectionTitle from "../reusableComponent/SectionTitle";
 

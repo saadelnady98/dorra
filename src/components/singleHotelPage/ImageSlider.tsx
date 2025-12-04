@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HotelImageGrid from "../reusableComponent/HotelImageGrid";
-import pic4 from "@/public/card.png";
-import defaultimg from "@/public/defaultimg.png";
+import pic4 from "@/public/card.webp";
+import defaultimg from "@/public/defaultimg.webp";
 
 // Image Slider Component
 const ImageSlider = ({ images }: { images: string[] }) => {

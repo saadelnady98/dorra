@@ -63,7 +63,11 @@ export default function CustomSelect({
             </SelectTrigger>
           </div>
 
-          <SelectContent className="bg-[#00000026] backdrop-blur-lg border-0 mt-2">
+          {/* هنا التعديل المهم */}
+          <SelectContent 
+            className="bg-[#00000026] backdrop-blur-lg border-0 mt-2"
+            position="popper"
+          >
             <SelectGroup className="bg-[#00000026]">
               {options?.map((option) => (
                 <SelectItem 

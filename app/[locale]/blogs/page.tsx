@@ -1,11 +1,9 @@
 import Banner from "@/components/reusableComponent/Banner";
 import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
-import pic1 from "@/public/card.png";
 import { getBlogData } from "@/lib/serverActions";
-import ServiceCard from "@/components/homePage/ServiceCard";
 import BlogsSection from "@/components/homePage/BlogsSection";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 import { Icon } from "@iconify/react";
 import Image from "next/image";
@@ -85,7 +83,10 @@ export default async function Page({ params }: any) {
                     </div>
                   </div>
                   {/* Blog Image */}
-                  <MainLink href={`/blogs/${blog?.slug}`} className="relative max-sm:w-full min-w-[200px] lg:w-[200px] 2xl:w-[250px] min-h-[200px] lg:h-full shrink-0 max-lg:mb-6">
+                  <MainLink
+                    href={`/blogs/${blog?.slug}`}
+                    className="relative max-sm:w-full min-w-[200px] lg:w-[200px] 2xl:w-[250px] min-h-[200px] lg:h-full shrink-0 max-lg:mb-6"
+                  >
                     <Image
                       src={blog?.image?.original_url || defaultimg}
                       alt="Blog"

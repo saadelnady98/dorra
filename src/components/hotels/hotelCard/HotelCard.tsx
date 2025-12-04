@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import CustomButton from "@/components/reusableComponent/CustomButton";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 

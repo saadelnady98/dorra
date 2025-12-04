@@ -10,12 +10,14 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import calendar2 from "@/public/calendar2.svg";
+import calendar2 from "@/public/calendar.svg";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+
+import { ChevronDown } from "lucide-react"; // السهم
 
 type DateRange = { from?: Date; to?: Date };
 
@@ -40,7 +42,8 @@ export function DatePickerWithRange({
   const today = new Date();
 
   const initialRange: DateRange = watch?.("date") || value || {};
-  const [selectedRange, setSelectedRange] = React.useState<DateRange>(initialRange);
+  const [selectedRange, setSelectedRange] =
+    React.useState<DateRange>(initialRange);
   const [hoverDate, setHoverDate] = React.useState<Date | null>(null);
 
   React.useEffect(() => {
@@ -48,7 +51,7 @@ export function DatePickerWithRange({
     else if (value) setSelectedRange(value || {});
   }, [watch, value]);
 
-   const { from, to } = selectedRange || {};
+  const { from, to } = selectedRange || {};
   const hasValue = from && to;
 
   const dateFormat = lang === "ar" ? "dd LLL" : "LLL dd";
@@ -70,9 +73,9 @@ export function DatePickerWithRange({
             variant="outline"
             aria-label={t("select_date")}
             className={cn(
-              "w-full justify-start py-[30px] rounded-[12px] text-left font-normal transition-colors duration-300 flex items-center gap-3",
+              "w-full justify-start py-[30px] rounded-[12px] text-left font-normal transition-colors duration-300 flex items-center gap-3 group",
               hasValue
-                ? "text-[#CAB16C]  bg-white hover:bg-white  hover:text-[#CAB16C]"
+                ? "text-[#CAB16C] bg-white hover:bg-white hover:text-[#CAB16C]"
                 : "text-white bg-[#FFFFFF1A] hover:bg-white hover:text-[#CAB16C]"
             )}
           >
@@ -81,9 +84,14 @@ export function DatePickerWithRange({
               alt="calendar"
               className="w-5 h-5 flex-shrink-0"
             />
-            <span className={`flex-1 ${lang === "ar" ? "text-right" : "text-left"}`}>
+
+            <span
+              className={`flex-1 ${lang === "ar" ? "text-right" : "text-left"}`}
+            >
               {displayText}
             </span>
+
+            <ChevronDown className="w-5 h-5 transition-transform duration-300" />
           </Button>
         </PopoverTrigger>
 
@@ -114,7 +122,9 @@ export function DatePickerWithRange({
                   onDayMouseEnter={(day: Date) => setHoverDate(day)}
                   onDayMouseLeave={() => setHoverDate(null)}
                   hoverRange={
-                    from && !to && hoverDate ? { from, to: hoverDate } : undefined
+                    from && !to && hoverDate
+                      ? { from, to: hoverDate }
+                      : undefined
                   }
                 />
               )}
@@ -129,7 +139,7 @@ export function DatePickerWithRange({
               selected={selectedRange}
               numberOfMonths={2}
               disabled={{ before: today }}
-              className="text-white w-full bg-transparent "
+              className="text-white w-full bg-transparent"
               onSelect={(range) => {
                 setSelectedRange(range);
                 onChange?.(range);

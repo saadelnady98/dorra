@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
-import Container from "@/components/reusableComponent/Container";
+ import Container from "@/components/reusableComponent/Container";
 import MainLink from "@/components/reusableComponent/MainLink";
-import title from "@/public/title.svg";
-import header from "@/public/header.png";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import { getTranslations } from "next-intl/server";
 import ServiceCard from "./ServiceCard";

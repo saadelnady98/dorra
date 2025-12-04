@@ -1,7 +1,7 @@
 import Banner from "@/components/reusableComponent/Banner";
 import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
-import pic1 from "@/public/card.png";
+import pic1 from "@/public/card.webp";
 import { getPrivacyData } from "@/lib/serverActions";
 import { Metadata } from "next";
 

@@ -7,12 +7,12 @@ import youtube from "@/public/youtubec.svg";
 import { getContactUsData } from "@/lib/serverActions";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import Image from "next/image";
-import Phone from "@/public/phonec.svg";
+import Phone from "@/public/phone.svg";
 import Whatsapp from "@/public/whatsappc.svg";
 import Email from "@/public/smsc.svg";
 import Link from "next/link";
 import ContactForm from "@/components/homePage/ContactForm";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {

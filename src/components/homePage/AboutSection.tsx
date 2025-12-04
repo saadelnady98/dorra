@@ -4,7 +4,7 @@ import title from "@/public/title.svg";
 import MainLink from "@/components/reusableComponent/MainLink";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/reusableComponent/Container";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 const AboutSection = async ({
   data,
@@ -30,8 +30,11 @@ const AboutSection = async ({
             <Image
               src={data?.image?.original_url || defaultimg}
               alt="Durra Taiba Hotel"
-              width={1000}
-              height={800}
+              width={700}
+              height={600}
+              quality={80}
+              priority
+              loading="eager"
               className="object-cover h-full w-full rounded-t-[49%]"
             />
             <div className="absolute left-0 bottom-0 h-full w-full rounded-t-[49%] bg-[#CAB16C] opacity-35 -translate-x-2 translate-y-2 -z-10" />

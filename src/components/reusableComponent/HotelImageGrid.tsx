@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { useLocale } from "next-intl";
 interface HotelImageGridProps {
   cardStyle?: boolean;

@@ -14,11 +14,11 @@ import "swiper/css/pagination";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Container from "@/components/reusableComponent/Container";
-import defaultimg from "@/public/defaultimg.png";
+import card from "@/public/card.webp";
 
 function HomeSlider({ data, imagesOnly }: { data: any; imagesOnly?: boolean }) {
   const t = useTranslations("home");
-  
+
   return (
     <Container className="!pt-0">
       <div
@@ -50,14 +50,14 @@ function HomeSlider({ data, imagesOnly }: { data: any; imagesOnly?: boolean }) {
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 ">
                   <Image
-                    //url not valid
-                    src={image?.original_url || defaultimg}
-                    // src={header}
+                    src={image?.original_url ?? card}
                     alt="Luxury Hotel"
-                    width={2200}
-                    height={2000}
+                    width={1024}
+                    height={1080}
                     className="object-cover w-full h-full dir-ltr"
-                    priority
+                    priority={index === 0}
+                    quality={75}
+                    loading="eager"
                   />
                   {/* Dark Overlay */}
                   <div className="absolute inset-0 bg-black/30"></div>

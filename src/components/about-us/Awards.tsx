@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SectionTitle from "../reusableComponent/SectionTitle";
-import defaultImg from "@/public/defaultimg.png";
+import defaultImg from "@/public/defaultimg.webp";
 
 const Awards = ({ data }: { data: any }) => {
   return (

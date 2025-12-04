@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "../reusableComponent/Container";
 import trueIcon from "@/public/trueIcon.svg";
 import { getTranslations } from "next-intl/server";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 
 const AboutSingleHotel = async ({ data }: any) => {
   const t = await getTranslations("SingleHotelPage");

@@ -2,7 +2,7 @@
 
 import trash from "@/public/trash.svg";
 import Image from "next/image";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 import { useTranslations } from "next-intl";
 
 interface TrashProps {

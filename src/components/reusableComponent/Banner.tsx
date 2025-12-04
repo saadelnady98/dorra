@@ -1,5 +1,5 @@
 import Image from "next/image";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 interface BannerProps {
   img: any;
   title?: string;

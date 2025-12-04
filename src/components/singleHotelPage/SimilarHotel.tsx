@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import location from "@/public/loacation.svg";
 import MainLink from "../reusableComponent/MainLink";
-import defaultimg from "@/public/defaultimg.png";
+import defaultimg from "@/public/defaultimg.webp";
 const SimilarHotel = async ({ data }: any) => {
   const t = await getTranslations("SimilarHotel");
   return (

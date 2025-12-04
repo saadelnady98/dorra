@@ -7,8 +7,8 @@ import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
 import { getContactUs } from "@/lib/serverActions";
 import Link from "next/link";
-import defaultimg from "@/public/defaultimg.png";
-import dubisignLogo from "@/public/dubisignlogo.png";
+import defaultimg from "@/public/defaultimg.webp";
+import dubisignLogo from "@/public/dubisignlogo.webp";
 
 const Footer: React.FC = async (params: any) => {
   const { locale: language } = await params;

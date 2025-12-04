@@ -1,9 +1,8 @@
 import Banner from "@/components/reusableComponent/Banner";
 import React from "react";
-import imag from "@/public/hotelsSlider.png";
+import imag from "@/public/hotelsSlider.webp";
 import HomeFilter from "@/components/shared/filter/HomeFilter";
 import Container from "@/components/reusableComponent/Container";
-import CustomSearch from "@/components/reusableComponent/CustomSearch";
 import Hotels from "@/components/hotels/Hotels";
 import { getFilterHotelsData } from "@/lib/serverActions";
 import { getTranslations } from "next-intl/server";

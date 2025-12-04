@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import pic1 from "@/public/card.png";
-import pic2 from "@/public/card.png";
-import pic3 from "@/public/card.png";
-import pic4 from "@/public/card.png";
-import pic5 from "@/public/card.png";
+import pic1 from "@/public/card.webp";
+import pic2 from "@/public/card.webp";
+import pic3 from "@/public/card.webp";
+import pic4 from "@/public/card.webp";
+import pic5 from "@/public/card.webp";
 import location from "@/public/loacation.svg";
 import phone from "@/public/phone.svg";
 import mail from "@/public/mail.svg";
