@@ -1,0 +1,357 @@
+{
+  "navbar": {
+    "homeLink": "الرئيسية",
+    "hotels": "الفنادق",
+    "aboutUs": "عن الفندق",
+    "cart": "العربة",
+    "services": "خدماتنا",
+    "blogs": "المدونة",
+    "listYourPoperty": "اضافة عقار",
+    "rent": "ايجار",
+    "offPlan": "تحت الانشاء",
+    "readyToMove": "جاهز للانتقال",
+    "english": "English",
+    "arabic": "العربية",
+    "faqs": "الاسئلة الشائعة",
+    "Menue": "القائمة",
+    "contactUs": "تواصل معنا"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "contact": "اتصل بنا"
+  },
+  "common": {
+    "loading": "جاري التحميل",
+    "error": "حدث خطأ",
+    "success": "تم بنجاح"
+  },
+  "error": {
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDesc": "عذراً، الصفحة التي تبحث عنها غير موجودة",
+    "backHome": "العودة للرئيسية",
+    "error": "حدث خطأ",
+    "errorDesc": "عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "footer": {
+    "copyright": "Copyright  2024 Durra Real State. جميع الحقوق محفوظة.",
+    "copyR": "جميع الحقوق محفوظة درة طيبة 2025 | بدعم من",
+    "Home": "الرئيسية",
+    "faq": "التعليمات",
+    "About Hotel": "من نحن",
+    "Contact Us": "اتصل بنا",
+    "Our Services": "خدماتنا",
+    "FAQ": "الاسئلة الشائعة",
+    "Social Media": "وسائل التواصل الاجتماعي",
+    "Legal": "القانون",
+    "Copyright": "حقوق النشر",
+    "Durra Tayba": "درة طيبة",
+    "All Rights Reserved": "جميع الحقوق محفوظة",
+    "Main Links": "الروابط الرئيسية",
+    "Privacy Policy": "سياسة الخصوصية",
+    "Terms & Conditions": "الحقوق والشروط"
+  },
+  "home": {
+    "hero": {
+      "title": "اكتشف رفاهية الإقامة في درة طيبة",
+      "description": "استمتع بتجربة استثنائية تجمع بين الفخامة والراحة في مجموعة فنادقنا المصممة بعناية لتلبية كافة توقعاتك.",
+      "bookNow": "إحجز الآن"
+    }
+  },
+  "AboutSection": {
+    "title": "نبذة عن درة",
+    "subtitle": "مكان واحد يجمع بين الفخامة والضيافة الراقية",
+    "description": "درة طيبة ليست مجرد مجموعة فنادق، بل هي تجربة تجمع بين التقاليد العربية الأصيلة وأعلى معايير الضيافة العصرية. نسعى دائمًا لتوفير تجربة لا تُنسى لضيوفنا في كل إقامة.",
+    "rooms": "غرفة وجناح",
+    "experience": "سنوات خبرة",
+    "hotels": "فنادق مميزة",
+    "cta": "تعرف علينا"
+  },
+  "OurBranches": {
+    "our_branches_title": "فروع الفنادق",
+    "our_branches_description": "تجربة الضيافة الفاخرة في مواقع متعددة",
+    "show_All": "اظهار الكل",
+    "show_details": "اظهار التفاصيل"
+  },
+  "OurServices": {
+    "our_services_title": "خدماتنا",
+    "our_services_description": "خدمات مصممة لتلبية كل احتياجاتك",
+    "show_All": "اظهار الكل"
+  },
+  "Feedback": {
+    "Feedback_title": "آراء العملاء",
+    "Feedback_description": "ماذا يقول عملائنا عن درة",
+    "Feedback_visite": "تاريخ الزيارة"
+  },
+  "BlogsSection": {
+    "Blogs_section_title": "أحدث المقالات",
+    "Blogs_section_description": "ابق على اطلاع بأحدث رؤى السفر وأدلة الوجهات لدينا",
+    "show_details": "عرض التفاصيل",
+    "show_All": "عرض الكل"
+  },
+  "ContactUsSection": {
+    "ContactUs_section_title": "اتصل بنا",
+    "ContactUs_section_description": "اتصل بنا للحصول على أي نقطة معالمة أو أي استفسارات أو ملاحظات",
+    "contact_info": "معلومات التواصل",
+    "contact_des": "أرسل لنا رسالتك، وسنكون سعداء بالرد عليك.",
+    "first_name": "الاسم الاول",
+    "last_name": "الاسم الاخير",
+    "email": "البريد الالكتروني",
+    "message": "الرسالة",
+    "phone_number": "رقم الهاتف",
+    "phone_required": "هذا الحقل مطلوب",
+    "invalid_phone": "رقم الهاتف غير صالح",
+    "send": "ارسال"
+  },
+  "SingleHotelPage": {
+    "rate": "التقييم",
+    "loading_rooms": "جاري التحميل",
+    "available_rooms": "غرف متاحة",
+    "no_rooms_available": "لا يوجد غرف متاحة",
+    "try_different_search": "حاول بحثاً مختلفاً",
+    "show_details": "عرض التفاصيل",
+    "description": "الوصف",
+    "add_to_card": "إضافة إلى السلة",
+    "facilities_and_services": "المزايا والخدمات",
+    "about_hotel": "عن الفندق",
+    "sar": "ريال",
+    "for1night": "1 ليلة",
+    "Show50photo": "عرض +50 صورة",
+    "privacy": "السياسات والشروط",
+    "faqs": "الأسئلة الشائعة",
+    "location": "الموقع",
+    "near_places": "المعالم القريبة",
+    "similar": "الفنادق المماثلة",
+    "room_features": "مميزات الغرفة",
+    "size": "المساحة",
+    "beds": "السرير",
+    "guests": "الضيوف",
+    "amenities": "المميزات",
+    "max_guests": "الضيوف",
+    "available": "متاح",
+    "price_per_night": "السعر لليلة"
+  },
+  "NearbyLandmarks": {
+    "near_places": "المعالم القريبة",
+    "nearest_landmarks": "أقرب 4 معالم رئيسية"
+  },
+  "LocationHotel": {
+    "location": "الموقع"
+  },
+  "PrivacyHotel": {
+    "title": "السياسات والشروط"
+  },
+  "FaqsHotel": {
+    "title": "الأسئلة الشائعة"
+  },
+  "SimilarHotel": {
+    "title": "الفنادق المماثلة",
+    "show_details": "اظهار التفاصيل"
+  },
+  "terms": {
+    "title": "الشروط والأحكام",
+    "description": "نقدم لك محتوى غني بالنصائح والمعلومات التي تجمع بين السفر، السياحة، وتجارب الإقامة المميزة."
+  },
+  "privacy": {
+    "title": "سياسة الخصوصية",
+    "description": "الوصف"
+  },
+  "faqs": {
+    "title": "الأسئلة الشائعة",
+    "description": "الوصف"
+  },
+  "services": {
+    "title": "خدماتنا",
+    "description": "الوصف"
+  },
+  "contactUs": {
+    "title": "اتصل بنا",
+    "description": "نحن هنا لخدمتك والإجابة على جميع استفساراتك! سواء كنت بحاجة إلى مساعدة في الحجز، أو لديك أي استفسار حول خدماتنا.",
+    "contact_form": "تواصل معنا",
+    "contact_form_desc": "إذا كان لديك أي استفسار، لا تتردد في مراسلتنا عبر النموذج التالي، وسنعاود الرد عليك في أقرب وقت ممكن.",
+    "phone": "رقم الهاتف",
+    "whatsapp": "واتساب",
+    "email": "البريد الالكتروني",
+    "facebook": "فيس بوك",
+    "linkedin": "لينكدإن",
+    "youtube": "يوتيوب",
+    "rss": "RSS",
+    "contact_info": "معلومات الإتصال",
+    "message": "Message",
+    "contact_info_desc": "تواصل معنا عبر الهاتف أو البريد الإلكتروني، أو تفضل بزيارتنا باستخدام الخريطة أدناه. تابعنا على وسائل التواصل الاجتماعي للبقاء على اطلاع بأحدث الأخبار والعروض."
+  },
+  "Reservation": {
+    "add_to_card": "إضافة إلى السلة",
+    "sar": "ريال",
+    "for1night": "1 ليلة",
+    "night": "ليلة"
+  },
+  "Cart": {
+    "title": "عربة الحجز الخاصة بك",
+    "description": "راجع تفاصيل حجزك قبل الإتمام واستمتع بتجربة إقامة لا تُنسى.",
+    "first_name": "الاسم الاول",
+    "last_name": "الاسم الاخير",
+    "email": "البريد الالكتروني",
+    "message": "الرسالة",
+    "phone_number": "رقم الهاتف",
+    "phone_required": "هذا الحقل مطلوب",
+    "invalid_phone": "رقم الهاتف غير صالح",
+    "send": "ارسال",
+    "selected_rooms": " الغرف المختارة",
+    "sar": "ريال",
+    "night": "ليلة",
+    "for1night": "1 ليلة",
+    "Show50photo": "عرض +50 صورة",
+    "privacy": "السياسات والشروط",
+    "faqs": "الأسئلة الشائعة",
+    "location": "الموقع",
+    "near_places": "المعالم القريبة",
+    "price": "المبلغ",
+    "total": "الاجمالي",
+    "add_to_card": "إضافة إلى السلة",
+    "adults": "البالغين",
+    "children": "الاطفال",
+    "no_rooms_selected": "لم يتم اختيار غرف",
+    "form_title": "أكمل بياناتك لإتمام الحجز",
+    "similar": "الفنادق المماثلة",
+    "edit_reservation": "تعديل الحجز",
+    "processing": "معالجة",
+    "update_cart": "تحديث السلة",
+    "loading": "جاري التحميل",
+    "updated_successfully": "تم تحديث الحجز بنجاح",
+    "added_to_cart": "تم إضافة الغرفة إلى السلة بنجاح",
+    "deleted_from_cart_successfully": "تم ازالة الغرفة من السلة بنجاح",
+    "sent_successfully": "تم ارسال الحجز بنجاح",
+    "first_name_required": "الاسم الأول مطلوب",
+    "last_name_required": "اسم العائلة مطلوب",
+    "invalid_email": "صيغة البريد الإلكتروني غير صحيحة",
+    "message_required": "الرسالة مطلوبة",
+    "something_went_wrong": "حدث خطأ، يرجى المحاولة مرة أخرى"
+  },
+  "blog": {
+    "title": "الأخبار",
+    "description": "الوصف",
+    "show_details": "اظهار التفاصيل",
+    "all_blogs": "جميع المدونات"
+  },
+  "about-us": {
+    "title": "عن مجموعة فنادق درة طيبة",
+    "description": "الوصف"
+  },
+  "banner": {
+    "dorra_hotels": "فنادق درة طيبة",
+    "dorra_hotels_description": "حيث الفخامة تلتقي بالراحة. اختر الفندق المناسب لك من قائمتنا المتميزة واستمتع بخدمات عالمية في أرقى المواقع."
+  },
+  "CustomSearch": {
+    "search": "البحث"
+  },
+  "filter": {
+    "hotel_branch": "الفرع",
+    "date": "التاريخ",
+    "filter": "التصفية",
+    "rating": "التقييم",
+    "1star": "نجمة",
+    "2star": "2 نجوم",
+    "3star": "3 نجوم",
+    "4star": "4 نجوم",
+    "5star": "5 نجوم",
+    "select_hotel": "اختر الفندق",
+    "select_date": "حدد التاريخ",
+    "children": "طفل",
+    "adults": "البالغين",
+    "and": "و",
+    "loading": "جاري البحث",
+    "show_results": "عرض النتائج",
+    "guests": "عدد الضيوف",
+    "room_type": "نوع الغرفة",
+    "select_room_type": "اختر نوع الغرفة",
+    "children_ages": "أعمار الأطفال",
+    "please_select_all_ages": "الرجاء اختيار جميع الأعمار"
+  },
+  "meta": {
+    "home": {
+      "title": "شركة درة طيبة المحدودة | إدارة الفنادق في المملكة العربية السعودية",
+      "description": "اكتشف درة طيبة – شركة رائدة في إدارة الفنادق بالمملكة، تقدم خدمات ضيافة متميزة ومخصصة.",
+      "Durrat_Tayba": "درة طيبة",
+      "hotel_management_Saudi_Arabia": "إدارة فنادق المملكة العربية السعودية",
+      "hospitality": "إدارة فنادق",
+      "hotel_services": "خدمات الفنادق",
+      "Saudi_hotels": "فنادق السعودية"
+    },
+    "about-us-meta": {
+      "title": "من نحن | شركة درة طيبة لإدارة الفنادق",
+      "description": "الفنادق بأعلى جودة في السعودية.",
+      "hotel_management_experts": "إدارة الفنادق",
+      "about_durrat_tayba": "about Durrat Tayba,",
+      "Saudi_hospitality": "إدارة فنادق",
+      "company_profile": "الضيافة السعودية"
+    },
+    "blogs": {
+      "title": "مدونة درة طيبة | أخبار ونصائح في مجال الفنادق",
+      "description": " تابع آخر الأخبار والتحليلات في مجال الفنادق والضيافة من خبراء شركة درة طيبة",
+      "blog": "مدونة",
+      "blogs": "مدونات",
+      "hospitality_news": "مدونة فنادق",
+      "Durrat_Tayba_insights": "آراء درة طيبة",
+      "hotel_management_tips": "نصائح الإدارة الفندقية"
+    },
+    "contact-us": {
+      "title": "تواصل معنا | شركة درة طيبة لإدارة الفنادق",
+      "description": "تواصل مع شركة درة طيبة للحصول على خدمات إدارة الفنادق أو لأي استفسارات عامة. نحن هنا لخدمتك.",
+      "contact_Durrat_Tayba": "تواصل مع درة طيبة",
+      "hotel_inquiries": "استفسارات الفنادق",
+      "hotel_management_contact": "إدارة الفنادق",
+      "customer_support": "خدمة العملاء"
+    },
+    "services": {
+      "title": "خدماتنا | حلول إدارة الفنادق من درة طيبة",
+      "description": "تعرف على خدمات إدارة الفنادق الشاملة التي نقدمها، من التشغيل والتوظيف إلى الاستشارات والمزيد.",
+      "hotel_management_services": "خدمات إدارة الفنادق",
+      "hospitality_solutions": "حلول الضيافة",
+      "operations": "التشغيل",
+      "consulting": "الاستشارات",
+      "Durrat_Tayba": "درة طيبة"
+    },
+    "hotels": {
+      "title": "فنادقنا | تحت إدارة شركة درة طيبة",
+      "description": "اكتشف أفضل الفنادق التي تديرها شركة درة طيبة في مختلف أنحاء المملكة. إقامة فاخرة بإدارة موثوقة.",
+      "hotels_in_Saudi_Arabia": "فنادق السعودية",
+      "Durrat_Tayba_hotels": "فنادق درة طيبة",
+      "managed_hotels": "إدارة فنادق",
+      "top_Saudi_hotels": "أفضل فنادق المملكة",
+      "No_data": "لا يوجد بيانات لعرضها"
+    },
+    "faqs": {
+      "title": "الأسئلة الشائعة | شركة درة طيبة لإدارة الفنادق",
+      "description": "اعثر على إجابات للأسئلة الشائعة حول خدمات وأعمال شركة درة طيبة في مجال إدارة الفنادق.",
+      "FAQs": "أسئلة شائعة",
+      "hotel_management_questions": "أسئلة إدارة الفنادق",
+      "Durrat_Tayba_help": "المساعدة من درة طيبة",
+      "hospitality_FAQs": "أسئلة شائعة في مجال الضيافة"
+    },
+    "terms": {
+      "title": "الشروط والأحكام | شركة درة طيبة المحدودة",
+      "description": "اطلع على الشروط والأحكام التي تنظم استخدام موقع وخدمات شركة درة طيبة.",
+      "terms_of_service": "الشروط والأحكام",
+      "website_terms": "الشروط والأحكام",
+      "Durrat_Tayba_terms": "سياسة الاستخدام",
+      "conditions_of_use": "درة طيبة"
+    },
+    "privacy": {
+      "title": "سياسة الخصوصية | شركة درة طيبة لإدارة الفنادق",
+      "description": "تعرف على كيفية جمع واستخدام وحماية معلوماتك الشخصية من قبل شركة درة طيبة.",
+      "privacy_policy": "سياسة الخصوصية",
+      "data_protection": "حماية البيانات",
+      "personal_information": "معلومات شخصية",
+      "Durrat_Tayba_privacy": "درة طيبة"
+    }
+  },
+  "trash": {
+    "deleteRoom": "هل تريد حذف الغرفة؟",
+    "confirmRemoveRoom": "هل أنت متأكد أنك تريد إزالة هذه الغرفة من السلة؟",
+    "cannotRecover": "لن تتمكن من استرجاعها بعد الحذف.",
+    "cancel": "إلغاء",
+    "deleteRooms": "حذف الغرف"
+  }
+}

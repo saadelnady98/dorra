@@ -1,0 +1,37 @@
+/* Custom Swiper styles to change bullet and navigation arrow colors to #CAB16C */
+
+/* Pagination bullets */
+.custom-swiper .swiper-pagination-bullet {
+  background: rgba(202, 177, 108, 0.5); /* #CAB16C with transparency */
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background: #CAB16C; /* Solid color for active bullet */
+}
+
+/* Navigation arrows */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #CAB16C;
+  font-size: 10px; /* Make arrows smaller by reducing font size */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes the background circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add opacity on hover for better interaction feedback */
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+  opacity: 0.8;
+}
+
+/* Reduce arrow size by setting width and height */
+.custom-swiper .swiper-button-next::after,
+.custom-swiper .swiper-button-prev::after {
+  font-size: 24px !important; /* Smaller arrow icon */
+  font-weight: bold;
+}

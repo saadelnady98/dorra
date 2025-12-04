@@ -1,0 +1,357 @@
+{
+  "navbar": {
+    "homeLink": "Home",
+    "hotels": "Hotels",
+    "aboutUs": "About Us",
+    "cart": "Cart",
+    "services": "Services",
+    "blogs": "Blogs",
+    "listYourPoperty": "List Your Poperty",
+    "rent": "rent",
+    "offPlan": "OffPlan",
+    "readyToMove": "ReadyToMove",
+    "english": "English",
+    "arabic": "العربية",
+    "faqs": "FAQs",
+    "Menue": "Menue",
+    "contactUs": "Contact Us"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading",
+    "error": "Error occurred",
+    "success": "Success"
+  },
+  "error": {
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDesc": "Sorry, the page you are looking for does not exist",
+    "backHome": "Back to Home",
+    "error": "Error Occurred",
+    "errorDesc": "Sorry, something went wrong. Please try again",
+    "tryAgain": "Try Again"
+  },
+  "footer": {
+    "copyright": "Copyright 2024 Durra Real State. All rights reserved.",
+    "copyR": "2025 Dorra Taiba. All rights reserved | Powered by",
+    "Home": "Home",
+    "faq": "FAQ",
+    "About Hotel": "About Hotel",
+    "Contact Us": "Contact Us",
+    "Our Services": "Our Services",
+    "FAQ": "FAQ",
+    "Social Media": "Social Media",
+    "Legal": "Legal",
+    "Copyright": "Copyright",
+    "Durra Tayba": "Durra Tayba",
+    "All Rights Reserved": "All Rights Reserved",
+    "Main Links": "Main Links",
+    "Privacy Policy": "Privacy Policy",
+    "Terms & Conditions": "Rights and Terms"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Luxury Living at Durra Taibah",
+      "description": "Experience exceptional luxury and comfort in our carefully designed hotels, crafted to exceed your expectations.",
+      "bookNow": "Book Now"
+    }
+  },
+  "AboutSection": {
+    "title": "About Us",
+    "subtitle": "One place that combines luxury and high-end hospitality",
+    "description": "Durra Taibah is not just a collection of hotels, but an experience that combines authentic Arabic traditions with the highest standards of modern hospitality. We strive to provide an unforgettable experience for our guests in every stay.",
+    "rooms": "Rooms and suites",
+    "experience": "Years of experience",
+    "hotels": "Distinctive hotels",
+    "cta": "Get to know us"
+  },
+  "OurBranches": {
+    "our_branches_title": "Hotel Branches",
+    "our_branches_description": "Experience the magic of modern hospitality in multiple locations",
+    "show_All": "Show All",
+    "show_details": "Show Details"
+  },
+  "OurServices": {
+    "our_services_title": "Our Services",
+    "our_services_description": "Services designed to meet your needs",
+    "show_All": "Show All"
+  },
+  "Feedback": {
+    "Feedback_title": "Feedback",
+    "Feedback_description": "What our customers say about Durra Taiba",
+    "Feedback_visite": "Visit Date"
+  },
+  "BlogsSection": {
+    "Blogs_section_title": "Latest Blog Posts",
+    "Blogs_section_description": "Stay updated with our latest travel insights and destination guides",
+    "show_details": "Show Details",
+    "show_All": "View All"
+  },
+  "ContactUsSection": {
+    "ContactUs_section_title": "Contact Us",
+    "ContactUs_section_description": "Get in touch with us for any inquiries or feedback",
+    "contact_info": "Contact Information",
+    "contact_des": "Send us your message, and we’ll be happy to respond.",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "phone_number": "Phone Number",
+    "phone_required": "This field is required",
+    "invalid_phone": "Invalid phone number",
+    "send": "Send"
+  },
+  "SingleHotelPage": {
+    "rate": "Rate",
+    "loading_rooms": "Loading Rooms",
+    "available_rooms": "Available Rooms",
+    "no_rooms_available": "No rooms available",
+    "try_different_search": "Try a different search",
+    "show_details": "Show Details",
+    "add_to_card": "Add to Cart",
+    "description": "Description",
+    "facilities_and_services": "Facilities And Services",
+    "about_hotel": "About Hotel",
+    "sar": "SAR",
+    "for1night": "1 night",
+    "Show50photo": "Show +50 photo",
+    "privacy": "Privacy Policy",
+    "faqs": "FAQs",
+    "location": "Location",
+    "near_places": "Near Places",
+    "similar": "Similar Hotels",
+    "room_features": "Room Features",
+    "size": "Size",
+    "beds": "Beds",
+    "guests": "Guests",
+    "amenities": "Amenities",
+    "max_guests": "Max Guests",
+    "available": "Available",
+    "price_per_night": "Price per night"
+  },
+  "NearbyLandmarks": {
+    "near_places": "Near Places",
+    "nearest_landmarks": "Nearest 4 landmarks"
+  },
+  "LocationHotel": {
+    "location": "Location"
+  },
+  "PrivacyHotel": {
+    "title": "Privacy Policy"
+  },
+  "FaqsHotel": {
+    "title": "FAQs"
+  },
+  "SimilarHotel": {
+    "title": "Similar Hotels",
+    "show_details": "Show Details"
+  },
+  "terms": {
+    "title": "Rights and Terms",
+    "description": "Description"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Description"
+  },
+  "faqs": {
+    "title": "FAQs",
+    "description": "Description"
+  },
+  "services": {
+    "title": "Services",
+    "description": "Description"
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "description": "We are here to serve you and answer all your inquiries! Whether you need help with booking or have any questions about our services.",
+    "contact_form": "Contact Us",
+    "contact_form_desc": "If you have any inquiries, please do not hesitate to contact us through the following form, and we will respond to you as soon as possible.",
+    "phone": "Phone",
+    "whatsapp": "Whatsapp",
+    "email": "Email",
+    "facebook": "Facebook",
+    "linkedin": "Linkedin",
+    "youtube": "Youtube",
+    "rss": "RSS",
+    "contact_info": "Contact Information",
+    "message": "Message",
+    "contact_info_desc": "Contact us by phone or email, or visit us using the map below. Follow us on social media to stay updated with the latest blogs and offers."
+  },
+  "Reservation": {
+    "add_to_card": "Add to Cart",
+    "sar": "SAR",
+    "for1night": "1 night",
+    "night": "night"
+  },
+  "Cart": {
+    "title": "Your Booking Cart",
+    "description": "Review your booking details before completion and enjoy a memorable stay.",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "phone_number": "Phone Number",
+    "phone_required": "This field is required",
+    "invalid_phone": "Invalid phone number",
+    "send": "Send",
+    "selected_rooms": "Selected Rooms",
+    "sar": "SAR",
+    "for1night": "1 night",
+    "night": "night",
+    "Show50photo": "Show +50 photo",
+    "privacy": "Privacy Policy",
+    "faqs": "FAQs",
+    "location": "Location",
+    "near_places": "Near Places",
+    "price": "Price",
+    "total": "Total",
+    "add_to_card": "Add to Cart",
+    "adults": "Adults",
+    "children": "Children",
+    "no_rooms_selected": "No rooms selected",
+    "form_title": "Complete your details to complete the booking",
+    "similar": "Similar Hotels",
+    "edit_reservation": "Edit Reservation",
+    "processing": "Processing",
+    "update_cart": "Update Cart",
+    "loading": "Loading",
+    "updated_successfully": "Updated successfully",
+    "added_to_cart": "Added to cart",
+    "deleted_from_cart_successfully": "Room deleted from cart successfully",
+    "sent_successfully": "Reservation sent successfully",
+    "first_name_required": "First name is required",
+    "last_name_required": "Last name is required",
+    "invalid_email": "Invalid email format",
+    "message_required": "Message is required",
+    "something_went_wrong": "Something went wrong, please try again"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Description",
+    "show_details": "Show Details",
+    "all_blogs": "All Blogs"
+  },
+  "about-us": {
+    "title": "About Durra Taibah Hotels Group",
+    "description": "Description"
+  },
+  "banner": {
+    "dorra_hotels": "Durra Taibah Hotels",
+    "dorra_hotels_description": "Where luxury meets comfort. Choose the perfect hotel from our unique collection and enjoy world-class services in the best locations."
+  },
+  "CustomSearch": {
+    "search": "Search"
+  },
+  "filter": {
+    "hotel_branch": "Hotel Branch",
+    "date": "Date",
+    "filter": "Filter",
+    "rating": "Rating",
+    "1star": "1 star",
+    "2star": "2 stars",
+    "3star": "3 stars",
+    "4star": "4 stars",
+    "5star": "5 stars",
+    "select_hotel": "Select Hotel",
+    "select_date": "Select Date",
+    "children": "Children",
+    "adults": "Adults",
+    "and": "&",
+    "loading": "Loading",
+    "show_results": "Filter",
+    "guests": "Guests",
+    "room_type": "Room Type",
+    "select_room_type": "Select Room Type",
+    "children_ages": "Children Ages",
+    "please_select_all_ages": "Please select all ages"
+  },
+  "meta": {
+    "home": {
+      "title": "Durrat Tayba Co. Ltd | Hotel Management in Saudi Arabia",
+      "description": "Discover Durrat Tayba – a leading hotel management company in Saudi Arabia, offering exceptional hospitality and tailored services.",
+      "Durrat_Tayba": "Durrat Tayba",
+      "hotel_management_Saudi_Arabia": "Hotel Management in Saudi Arabia",
+      "hospitality": "Hospitality",
+      "hotel_services": "Hotel Services",
+      "Saudi_hotels": "Saudi Hotels"
+    },
+    "about-us-meta": {
+      "title": "About Durrat Tayba | Experts in Hotel Management",
+      "description": "Learn more about Durrat Tayba's mission, vision, and commitment to delivering premium hotel management services in Saudi Arabia.",
+      "hotel_management_experts": "hotel management experts",
+      "about_durrat_tayba": "about Durrat Tayba,",
+      "Saudi_hospitality": "Saudi hospitality",
+      "company_profile": "company profile"
+    },
+    "blogs": {
+      "title": "Durrat Tayba Blog | Hotel Industry Insights & News",
+      "description": "Read the latest insights and updates in the hotel and hospitality industry by Durrat Tayba’s experts.",
+      "blog": "blog",
+      "blogs": "blogs",
+      "hospitality_news": "hospitality news",
+      "Durrat_Tayba_insights": "Durrat Tayba insights",
+      "hotel_management_tips": "hotel_management_tips"
+    },
+    "contact-us": {
+      "title": "Contact Durrat Tayba | Hotel Management Inquiries",
+      "description": "Get in touch with Durrat Tayba for hotel management services and general inquiries. We're here to assist you.",
+      "contact_Durrat_Tayba": "contact Durrat Tayba",
+      "hotel_inquiries": "hotel inquiries",
+      "hotel_management_contact": "hotel management contact",
+      "customer_support": "customer support"
+    },
+    "services": {
+      "title": "Our Services | Hotel Management Solutions by Durrat Tayba",
+      "description": "Explore our comprehensive hotel management services including operations, staffing, consulting, and more.",
+      "hotel_management_services": "hotel management services",
+      "hospitality_solutions": "hospitality solutions",
+      "operations": "operations",
+      "consulting": "consulting",
+      "Durrat_Tayba": "Durrat Tayba"
+    },
+    "hotels": {
+      "title": "Our Hotels | Managed by Durrat Tayba Co. Ltd",
+      "description": "View the top hotels managed by Durrat Tayba across Saudi Arabia. Quality stays with trusted management.",
+      "hotels_in_Saudi_Arabia": "hotels in Saudi Arabia",
+      "Durrat_Tayba_hotels": "Durrat Tayba hotels",
+      "managed_hotels": "managed hotels",
+      "top_Saudi_hotels": "top Saudi hotels",
+      "No_data": "No hotels found"
+    },
+    "faqs": {
+      "title": "FAQs | Durrat Tayba – Hotel Management Questions",
+      "description": "Find answers to frequently asked questions about Durrat Tayba’s hotel management services and operations.",
+      "FAQs": "FAQs",
+      "hotel_management_questions": "hotel management questions",
+      "Durrat_Tayba_help": "Durrat Tayba help",
+      "hospitality_FAQs": "hospitality FAQs"
+    },
+    "terms": {
+      "title": "Terms & Conditions | Durrat Tayba Co. Ltd",
+      "description": "Review the terms and conditions governing your use of Durrat Tayba’s website and services.",
+      "terms_of_service": "terms of service",
+      "website_terms": "website terms",
+      "Durrat_Tayba_terms": "Durrat Tayba terms",
+      "conditions_of_use": "conditions of use"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Durrat Tayba Hotel Management",
+      "description": "Learn how Durrat Tayba collects, uses, and protects your personal information.",
+      "privacy_policy": "privacy policy",
+      "data_protection": "data protection",
+      "personal_information": "personal information",
+      "Durrat_Tayba_privacy": "Durrat Tayba privacy"
+    }
+  },
+  "trash": {
+    "deleteRoom": "Delete room?",
+    "confirmRemoveRoom": "Are you sure you want to remove this room from the cart?",
+    "cannotRecover": "You will not be able to recover them after deletion.",
+    "cancel": "Cancel",
+    "deleteRooms": "Delete Rooms"
+  }
+}
