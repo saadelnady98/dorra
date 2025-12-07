@@ -5,9 +5,8 @@ import MainLink from "@/components/reusableComponent/MainLink";
 import { Icon } from "@iconify/react";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import { getTranslations } from "next-intl/server";
-import defaultimg from "@/public/defaultimg.webp";
+import cardFallBackImg from "@/public/card.webp";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 interface BlogsSectionProps {
   data: any;
@@ -45,10 +44,14 @@ const BlogsSection = async ({
                       {/* Blog Image */}
                       <div className="relative w-full min-h-[200px] lg:h-full mb-6">
                         <Image
-                          src={data?.[0]?.image?.original_url || defaultimg}
+                          src={
+                            data?.[0]?.image?.original_url ?? cardFallBackImg
+                          }
                           alt="Blog"
                           className="object-cover rounded-[24px] border border-white/20"
-                          fill
+                          width={600}
+                          height={600}
+                          quality={75}
                         />
                       </div>
 
@@ -120,7 +123,9 @@ const BlogsSection = async ({
                         {/* Blog Image */}
                         <div className="relative max-sm:w-full min-w-[200px] lg:w-[200px] 2xl:w-[250px] min-h-[200px] lg:h-full shrink-0 max-lg:mb-6">
                           <Image
-                            src={data?.[1]?.image?.original_url || defaultimg}
+                            src={
+                              data?.[1]?.image?.original_url ?? cardFallBackImg
+                            }
                             alt="Blog"
                             className="object-cover rounded-[24px] border border-white/20"
                             fill
@@ -163,7 +168,9 @@ const BlogsSection = async ({
                         {/* Blog Image */}
                         <div className="relative max-sm:w-full min-w-[200px] lg:w-[200px] 2xl:w-[250px] min-h-[200px] lg:h-full shrink-0 max-lg:mb-6">
                           <Image
-                            src={data?.[2]?.image?.original_url || defaultimg}
+                            src={
+                              data?.[2]?.image?.original_url ?? cardFallBackImg
+                            }
                             alt="Blog"
                             className="object-cover rounded-[24px] border border-white/20"
                             fill
@@ -180,17 +187,16 @@ const BlogsSection = async ({
 
             {data?.length === 2 &&
               data?.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative w-full h-fit group"
-                >
+                <div key={index} className="relative w-full h-fit group">
                   <div className=" inset-0 bg-white/5 border border-white/20 rounded-[24px] lg:h-full">
                     <div className="p-4 flex flex-col h-full">
                       {/* Blog Image */}
-                      <MainLink href={`/blogs/${item?.slug}`} 
-                      className="relative w-full min-h-[200px] lg:h-full mb-6">
+                      <MainLink
+                        href={`/blogs/${item?.slug}`}
+                        className="relative w-full min-h-[200px] lg:h-full mb-6"
+                      >
                         <Image
-                          src={item?.image?.original_url || defaultimg}
+                          src={item?.image?.original_url ?? cardFallBackImg}
                           alt="Blog"
                           className="object-cover h-[353px] rounded-[24px] border border-white/20"
                           width={656}
@@ -238,9 +244,12 @@ const BlogsSection = async ({
                 <div className=" inset-0 bg-white/5 border border-white/20 rounded-[24px] lg:h-full">
                   <div className="p-4 flex flex-col h-full">
                     {/* Blog Image */}
-                    <MainLink href={`/blogs/${data?.[0]?.slug}`} className="relative w-full min-h-[200px] lg:h-full mb-6">
+                    <MainLink
+                      href={`/blogs/${data?.[0]?.slug}`}
+                      className="relative w-full min-h-[200px] lg:h-full mb-6"
+                    >
                       <Image
-                        src={data?.[0]?.image?.original_url || defaultimg}
+                        src={data?.[0]?.image?.original_url ?? cardFallBackImg}
                         alt="Blog"
                         className="object-cover h-[353px] rounded-[24px] border border-white/20"
                         width={656}
