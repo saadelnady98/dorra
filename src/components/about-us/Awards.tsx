@@ -13,18 +13,7 @@ const Awards = ({ data }: { data: any }) => {
           description={data?.description}
         />
 
-        {/* <Image
-          src={img2}
-          className="w-[42px] h-[9px] lg:w-[64px] lg:h-[13px]"
-          alt="img2"
-        />
-        <h1 className="text-gold lg:py-[16px] lg:text-[24px] py-[8px] text-[15px] lg:font-medium font-normal text-center ">
-          Awards and achievements
-        </h1>
-        <h1 className="text-white/80 text-[12px] font-light  lg:text-[18px] lg:font-light">
-          Over the years, Durrat Taibah Hotels has received many awards and
-          honors that reflect our commitment to quality and excellence.
-        </h1> */}
+      
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {data?.achievement?.map((item: any) => (

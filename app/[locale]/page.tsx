@@ -42,7 +42,6 @@ export default async function Home({ params }: LayoutProps) {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between pt-28 rtl:text-right ltr:text-left">
-        {/* <Test/> */}
         <HomeSlider data={homeData?.data?.slider} />
         <HomeFilter hotels={data?.data} locale={locale} />
         <AboutSection data={homeData?.data?.aboutus} />

@@ -39,10 +39,10 @@ function CartRooms() {
     setIsModalOpen(false);
     toast.success(t("deleted_from_cart_successfully"));
   };
-  const [loading, setLoading] = useState(true); // shimmer state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000); // 1s shimmer
+    const timer = setTimeout(() => setLoading(false), 1000);  
     return () => clearTimeout(timer);
   }, []);
 

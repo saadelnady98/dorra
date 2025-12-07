@@ -6,6 +6,7 @@ import defaultimg from "@/public/defaultimg.webp";
 
 const AboutSingleHotel = async ({ data }: any) => {
   const t = await getTranslations("SingleHotelPage");
+ 
   return (
     <Container>
       <div className="flex flex-col gap-5">
@@ -26,8 +27,8 @@ const AboutSingleHotel = async ({ data }: any) => {
           </span>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {/* services */}
-            {data?.services?.map((item: any) => (
-              <div key={item?.id} className="flex flex-col gap-3">
+            {data?.services?.map((item: any, index) => (
+              <div key={index} className="flex flex-col gap-3">
                 {/* category */}
                 <div className="flex items-center gap-4">
                   <Image

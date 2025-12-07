@@ -130,6 +130,14 @@ body {
   background: #b29b5f;
 }
 
-.PhoneInputCountrySelect   {
+.PhoneInputCountrySelect {
   width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  [data-aos="none"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

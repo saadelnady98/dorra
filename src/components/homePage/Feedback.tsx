@@ -7,10 +7,7 @@ import qq from "@/public/qq.svg";
 import { Icon } from "@iconify/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import userImage from "@/public/user.webp";
-// import "swiper/css";
-// import "swiper/css/free-mode";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+
 
 import { Autoplay, Pagination } from "swiper/modules";
 import SectionTitle from "@/components/reusableComponent/SectionTitle";
@@ -19,11 +16,7 @@ import { useTranslations } from "next-intl";
 function Feedback({ data }: { data: any }) {
   const t = useTranslations("Feedback");
 
-  // comment: "dfdf"
-  // date: "2025-02-03"
-  // id: 1
-  // image: {id: 17, file_name: 'image-5.webp', original_url: 'https://api-dorrataiba.tetane.com/media/17/image-5.webp', extension: 'png', size: 163446}
-  // name: "fdfd"
+
 
   return (
     <Container>
@@ -43,22 +36,11 @@ function Feedback({ data }: { data: any }) {
           //   centeredSlides={true}
           speed={700}
           breakpoints={{
-            // When the viewport width is >= 320px
             320: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            // When the viewport width is >= 640px
-            //   640: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 20,
-            //   },
-            // When the viewport width is >= 768px
-            //   768: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 25,
-            //   },
-            // When the viewport width is >= 1024px
+          
             1024: {
               slidesPerView: 2,
               spaceBetween: 30,
@@ -77,20 +59,14 @@ function Feedback({ data }: { data: any }) {
                   <div className="p-4 md:p-6 flex flex-col h-full">
                     {/* Header with Image and Info */}
                     <div className="flex items-center justify-between mb-3 md:mb-4">
-                      {/* Left Quote Icon */}
-                      {/* <div className="w-[40px] h-[30px] md:w-[53px] md:h-[40px] flex items-center justify-center">
-                      <Icon
-                        icon="ri:double-quotes-r"
-                        className="text-[#CAB16C]/10 text-4xl md:text-5xl"
-                      />
-                    </div> */}
+                
 
                       {/* User Info and Rating */}
                       <div className="flex items-center">
                         {/* User Image */}
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl overflow-hidden ltr:mr-3 rtl:ml-3">
                           <Image
-                            // src={header}
+                           
                             src={item?.image?.original_url ?? userImage}
                             alt={item?.name || "أحمد العتيبي"}
                             width={200}
@@ -114,8 +90,7 @@ function Feedback({ data }: { data: any }) {
 
                       {/* Left Quote Icon */}
                       <div className="w-[40px] h-[30px] md:w-[53px] md:h-[40px] flex items-center justify-center">
-                        {/* icon */}
-                        {/* <div className=""> */}
+                       
                         <Image
                           src={qq || defaultimg}
                           alt="Shopping Bag"
@@ -124,12 +99,8 @@ function Feedback({ data }: { data: any }) {
                           unoptimized
                           className="object-contain w-full h-full"
                         />
-                        {/* </div> */}
 
-                        {/* <Icon
-                        icon="ri:double-quotes-r"
-                        className="text-[#CAB16C]/10 text-4xl md:text-5xl"
-                      /> */}
+                     
                       </div>
                     </div>
 

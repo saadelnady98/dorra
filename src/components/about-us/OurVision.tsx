@@ -1,20 +1,6 @@
 import SectionTitle from "../reusableComponent/SectionTitle";
 
 const OurVision = ({ data, className }: { data: any; className?: string }) => {
-  const Blocks = [
-    {
-      id: 1,
-      title: "Our Vision",
-      description:
-        "  We seek to be the first choice for travelers looking for luxury and comfort by providing an unforgettable accommodation experience that blends luxury and authentic Arab hospitality We focus on providing everything new in the world of hospitality while preserving the traditions that distinguish us Which makes visitors stay at Durrat Taibah a unique and unforgettable experience",
-    },
-    {
-      id: 2,
-      title: "Our message",
-      description:
-        "We are committed to providing an exceptional level of hospitality characterized by innovation and excellence, as we work to provide a sophisticated accommodation environment that combines luxury and comfort in every detail. Every step we take aims to provide a personalized experience that adds a personal touch to your stay, taking into account the smallest details that reflect the professionalism of our staff and our concern for the comfort of our guests.",
-    },
-  ];
   return (
     <div
       className={`mx-auto mb-[100px] ${className || ""}`}

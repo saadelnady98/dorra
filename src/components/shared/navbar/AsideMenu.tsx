@@ -41,8 +41,6 @@ function AsideMenu({
     { value: t("blogs"), path: "/blogs" },
     { value: t("faqs"), path: "/faqs" },
     { value: t("hotels"), path: "/hotels" },
-    // { value: t("profile"), path: "/profile" },
-    // { value: t("myAccount"), path: "/my-account" },
   ];
 
   return (

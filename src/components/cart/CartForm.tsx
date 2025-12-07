@@ -16,8 +16,7 @@ import { RootState } from "@/store/store";
 import toast from "react-hot-toast";
 import { removeCart } from "@/store/slices/cartSlice";
 
-// استخدام الترجمات مباشرة للـ zod errors
-const getFormSchema = (t: any) =>
+ const getFormSchema = (t: any) =>
   z.object({
     firstName: z.string().min(1, t("first_name_required")),
     lastName: z.string().min(1, t("last_name_required")),

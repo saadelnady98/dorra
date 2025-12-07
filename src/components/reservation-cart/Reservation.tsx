@@ -85,8 +85,7 @@ const Reservation = ({ open, close }) => {
           width={500}
           height={500}
           alt="location"
-          // className="aspect-[1/1] w-full md:max-w-[180px] lg:max-w-[210px] xl:max-w-[230px] object-cover rounded-3xl"
-          className="aspect-[1/1] w-[171px] h-[171px] object-cover rounded-3xl"
+           className="aspect-[1/1] w-[171px] h-[171px] object-cover rounded-3xl"
         />
         <div className="flex flex-col justify-between gap-4 py-2">
           <div>
@@ -95,9 +94,7 @@ const Reservation = ({ open, close }) => {
             </span>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-20">
               <div className="flex gap-2">
-                {/* <span className="text-gold text-[24px]">
-                          <IoPeopleOutline />
-                        </span> */}
+           
                 <Image
                   src={trash || defaultimg}
                   width={50}

@@ -62,7 +62,6 @@ function HomeSlider({ data, imagesOnly }: { data: any; imagesOnly?: boolean }) {
                   {/* Dark Overlay */}
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
-                {/* <Image fill priority src={file?.original_url} alt={file?.file_name} className="object-cover " /> */}
               </SwiperSlide>
             );
           })}

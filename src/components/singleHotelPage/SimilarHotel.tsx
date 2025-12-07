@@ -23,11 +23,8 @@ const SimilarHotel = async ({ data }: any) => {
               <div className="relative h-[250px] 2xl:h-[300px] mb-4 md:mb-6">
                 <Image
                   src={branch?.image?.original_url || defaultimg}
-                  // src={card}
                   alt={"branch"}
                   fill
-                  //   width={700}
-                  //   height={600}
                   className="object-cover rounded-lg w-full h-full"
                 />
               </div>
@@ -53,10 +50,7 @@ const SimilarHotel = async ({ data }: any) => {
                         className="object-contain w-full h-full"
                       />
                     </div>
-                    {/* <Icon
-                        icon={"ep:location"}
-                        className="w-6 h-6 text-[#CAB16C]"
-                      /> */}
+
                     <div className="overflow-y-auto flex items-center h-fit hidden-scrollbar">
                       <p className="text-white/80 md:text-sm text-xs ">
                         {branch?.address}
@@ -64,11 +58,7 @@ const SimilarHotel = async ({ data }: any) => {
                     </div>
                   </div>
                 </div>
-                {/* Button */}
-                {/* <button className="w-full mt-auto text-[#CAB16C] bg-[#CAB16C] bg-opacity-15 hover:bg-opacity-25 text-primary rounded-full py-2.5 md:py-3 text-sm md:text-base transition-all">
-                  {t("show_details")}
-                </button> */}
-                {/* Button */}
+
                 <MainLink
                   href={`/hotels/${branch?.slug}`}
                   className="w-full mt-auto !text-[#CAB16C] bg-[#CAB16C] bg-opacity-15 hover:bg-opacity-25 text-primary rounded-full py-2.5 md:py-3 text-sm md:text-base transition-all text-center"

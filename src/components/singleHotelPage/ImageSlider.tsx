@@ -1,25 +1,10 @@
 import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import HotelImageGrid from "../reusableComponent/HotelImageGrid";
-import pic4 from "@/public/card.webp";
 import defaultimg from "@/public/defaultimg.webp";
 
 // Image Slider Component
 const ImageSlider = ({ images }: { images: string[] }) => {
-  // return (
-  //   <>
-  //     <HotelImageGrid
-  //       images={images}
-  //       // openModal={/* your openModal function here */}
-  //       showPhotoText={"Show50photo"}
-  //       fallbackImages={{
-  //         main: pic4,
-  //         others: pic4,
-  //       }}
-  //     />
-  //   </>
-  // );
   return (
     <Swiper
       modules={[Navigation, Pagination]}

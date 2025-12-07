@@ -22,8 +22,7 @@ const HotelImageGrid = ({
   fallbackImages,
   isOriginalUrl = false,
 }: HotelImageGridProps) => {
-  // Helper function to get image source based on whether it's an object with original_url or just a string
-  const locale = useLocale();
+   const locale = useLocale();
    const getImageSrc = (image: any, fallback: string) => {
     if (isOriginalUrl) {
       return image?.original_url || fallback;
