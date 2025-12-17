@@ -4,11 +4,8 @@ import { getTranslations } from "next-intl/server";
 import pic1 from "@/public/card.webp";
 import { getServicesData } from "@/lib/serverActions";
 import ServiceCard from "@/components/homePage/ServiceCard";
-import { Metadata } from "next";
 
-
-
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata() {
   const t = await getTranslations("meta");
   return {
     title: t("services.title"),
@@ -23,13 +20,11 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-
 export default async function Page({ params }: any) {
   const { locale } = await params;
   const t = await getTranslations("services");
 
   const data = await getServicesData(locale);
-
 
   return (
     <Container className="!pt-0">
@@ -44,8 +39,12 @@ export default async function Page({ params }: any) {
         description={data?.data?.header?.description}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 mt-[100px]" data-aos="fade-up" data-aos-duration="1000">
-        {data?.data?.data?.map((service:any) => (
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 mt-[100px]"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        {data?.data?.data?.map((service: any) => (
           <ServiceCard key={service?.id} service={service} />
         ))}
       </div>

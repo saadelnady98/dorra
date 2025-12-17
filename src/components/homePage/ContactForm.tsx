@@ -11,6 +11,7 @@ import { useMutation } from "@tanstack/react-query";
 import apiServiceCall from "@/lib/apiServiceCall";
 import CustomTextarea from "../ui/CustomTextarea";
 import { toast } from "react-hot-toast";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 const ContactForm = ({
   btnAlignEnd,
@@ -28,7 +29,14 @@ const ContactForm = ({
     firstName: z.string().min(1, te("first_name_required")),
     lastName: z.string().min(1, te("last_name_required")),
     email: z.string().email(te("email_invalid")),
-    phone: z.string().min(1, te("phone_required")),
+
+    phone: z
+      .string()
+      .min(1, t("phone_required"))
+      .refine((val) => isValidPhoneNumber(val), {
+        message: t("invalid_phone"),
+      }),
+    message: z.string().min(1, te("message_required")).optional(),
   });
 
   const withMessageSchema = baseSchema.extend({
@@ -52,7 +60,14 @@ const ContactForm = ({
   // 🔥 Mutation with toast notifications
   const { mutate, isPending } = useMutation({
     mutationFn: (data) =>
-      apiServiceCall({ url: "contacts", body: data, method: "POST" }),
+      apiServiceCall({
+        url: "contacts",
+        body: data,
+        method: "POST",
+        headers: {
+          "Accept-Language": locale,
+        },
+      }),
     onSuccess: () => {
       toast.success(t("sent_success"));
       reset();
@@ -123,7 +138,7 @@ const ContactForm = ({
           label={t("message")}
           name="message"
           register={register}
-          error={errors.message?.message}
+          error={errors?.message?.message}
           locale={locale}
         />
       )}

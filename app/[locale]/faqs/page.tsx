@@ -6,7 +6,7 @@ import FaqsHotel from "@/components/reusableComponent/FaqsHotel";
 import { getFaqsData } from "@/lib/serverActions";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata(props: any): Promise<Metadata> {
   const t = await getTranslations("meta");
   return {
     title: t("faqs.title"),
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: any) {
-  const { locale } = await params;
+export default async function Page(props: any) {
+  const { locale } = props.params as { locale: string };
   const t = await getTranslations("faqs");
 
   const data = await getFaqsData(locale);

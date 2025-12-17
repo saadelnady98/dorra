@@ -19,7 +19,7 @@ import {
 
 import { ChevronDown } from "lucide-react"; // السهم
 
-type DateRange = { from?: Date; to?: Date };
+import type { DateRange } from "react-day-picker";
 
 interface DatePickerWithRangeProps {
   watch?: any;
@@ -42,8 +42,10 @@ export function DatePickerWithRange({
   const today = new Date();
 
   const initialRange: DateRange = watch?.("date") || value || {};
-  const [selectedRange, setSelectedRange] =
-    React.useState<DateRange>(initialRange);
+  const [selectedRange, setSelectedRange] = React.useState<
+    DateRange | undefined
+  >(initialRange);
+
   const [hoverDate, setHoverDate] = React.useState<Date | null>(null);
 
   React.useEffect(() => {
@@ -73,7 +75,7 @@ export function DatePickerWithRange({
             variant="outline"
             aria-label={t("select_date")}
             className={cn(
-              "w-full justify-start py-[30px] rounded-[12px] text-left font-normal transition-colors duration-300 flex items-center gap-3 group",
+              "w-full justify-start py-[30px] rounded-[12px] border-0  text-left font-normal transition-colors duration-300 flex items-center gap-3 group",
               hasValue
                 ? "text-[#CAB16C] bg-white hover:bg-white hover:text-[#CAB16C]"
                 : "text-white bg-[#FFFFFF1A] hover:bg-white hover:text-[#CAB16C]"
@@ -117,15 +119,20 @@ export function DatePickerWithRange({
                   onSelect={(range) => {
                     setSelectedRange(range);
                     field.onChange(range);
-                    onChange?.(range);
+                    if (range) {
+                      onChange?.(range);
+                    }
                   }}
                   onDayMouseEnter={(day: Date) => setHoverDate(day)}
                   onDayMouseLeave={() => setHoverDate(null)}
-                  hoverRange={
-                    from && !to && hoverDate
-                      ? { from, to: hoverDate }
-                      : undefined
-                  }
+                  // hoverRange={
+                  //   from && !to && hoverDate
+                  //     ? { from, to: hoverDate }
+                  //     : undefined
+                  // }
+                  modifiersClassNames={{
+                    hoverRange: "bg-accent text-accent-foreground",
+                  }}
                 />
               )}
             />
@@ -142,13 +149,18 @@ export function DatePickerWithRange({
               className="text-white w-full bg-transparent"
               onSelect={(range) => {
                 setSelectedRange(range);
-                onChange?.(range);
+                if (range) {
+                  onChange?.(range);
+                }
               }}
               onDayMouseEnter={(day: Date) => setHoverDate(day)}
               onDayMouseLeave={() => setHoverDate(null)}
-              hoverRange={
-                from && !to && hoverDate ? { from, to: hoverDate } : undefined
-              }
+              // hoverRange={
+              //   from && !to && hoverDate ? { from, to: hoverDate } : undefined
+              // }
+              modifiersClassNames={{
+                hoverRange: "bg-accent text-accent-foreground",
+              }}
             />
           )}
         </PopoverContent>

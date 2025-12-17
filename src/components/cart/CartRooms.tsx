@@ -17,6 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { removeCartItem } from "@/store/slices/cartSlice";
 import toast from "react-hot-toast";
+import { FaBed } from "react-icons/fa";
+import { CartItem } from "@/store/slices/types";
 
 function CartRooms() {
   const { cart } = useSelector((state: RootState) => state.cart);
@@ -26,23 +28,33 @@ function CartRooms() {
   const dispatch = useDispatch();
 
   const [isModalOpen, setIsModalOpen] = useState<string | false>(false);
-  const [selectedRoom, setSelectedRoom] = useState<any>(null);
-  const [indexToUpdateCart, setIndexToUpdateCart] = useState<number | null>(
-    null
-  );
+  const [selectedRoom, setSelectedRoom] = useState<CartItem | null>(null);
+  const [indexToUpdateCart, setIndexToUpdateCart] = useState<number>(0);
   const [indexToDeleteFromCart, setIndexToDeleteFromCart] = useState<
     number | null
   >(null);
 
   const handleDeleteRoom = (index: number) => {
-    dispatch(removeCartItem(index!));
+    const item = cart[index];
+    if (!item) return;
+
+    dispatch(
+      removeCartItem({
+        roomTypeId: item.room_type.id,
+        hotelId: item.hotel?.id || 0,
+        checkin: item.checkin_date.toString(),
+        checkout: item.checkout_date.toString(),
+      })
+    );
+
     setIsModalOpen(false);
     toast.success(t("deleted_from_cart_successfully"));
   };
-  const [loading, setLoading] = useState(true); 
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);  
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -70,7 +82,9 @@ function CartRooms() {
   const totalPrice = (cart || []).reduce((acc: number, room: any) => {
     const nights = getNumberOfNights(room?.checkin_date, room?.checkout_date);
     const pricePerNight = Number(room?.price_per_night) || 0;
-    return acc + nights * pricePerNight;
+    const quantity = Number(room?.quantity) || 1;
+
+    return acc + nights * pricePerNight * quantity;
   }, 0);
 
   return (
@@ -98,8 +112,8 @@ function CartRooms() {
       ) : cart && cart.length > 0 ? (
         // Render actual cart items
         cart.map((item, index) => (
-          <div key={index} className="flex flex-col rounded-3xl">
-            <div className="flex flex-col md:flex-row p-4 gap-7 border-b border-[#ffffff20]">
+          <div key={index}>
+            <div className="flex flex-col md:flex-row py-4 px-1 gap-4 border-b border-[#ffffff20] items-center">
               <Image
                 src={item?.images?.[0]?.original_url ?? defaultimg}
                 width={500}
@@ -160,7 +174,7 @@ function CartRooms() {
                       unoptimized
                     />
                     <span className="text-white text-sm lg:text-base">
-                      {item?.hotel.name}- {item?.hotel?.address}
+                      {item?.hotel?.name}- {item?.hotel?.address}
                     </span>
                   </div>
                   <div className="flex gap-2">
@@ -174,8 +188,8 @@ function CartRooms() {
                     />
                     <span className="text-white text-sm lg:text-base">
                       {formatDateRange(
-                        item?.checkin_date,
-                        item?.checkout_date,
+                        item?.checkin_date?.toString(),
+                        item?.checkout_date?.toString(),
                         locale
                       )}
                     </span>
@@ -193,6 +207,13 @@ function CartRooms() {
                     <span className="text-white text-sm lg:text-base">
                       {item?.adults} {t("adults")} - {item?.ages?.length}{" "}
                       {t("children")}
+                    </span>
+                  </div>
+
+                  <div className="flex gap-2 items-center text-white">
+                    <FaBed className="w-5 h-5" color="#CAB16C" />
+                    <span className="text-sm lg:text-base">
+                      {t("quantity")} {item?.quantity}
                     </span>
                   </div>
                 </div>

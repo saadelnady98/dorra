@@ -4,9 +4,15 @@ import { getTranslations } from "next-intl/server";
 import { getServicesData, getSingleServiceData } from "@/lib/serverActions";
 import HomeSlider from "@/components/homePage/HomeSlider";
 import { Metadata } from "next";
+type Props = {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+};
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const { locale, slug } = await params;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;  
   const data = await getSingleServiceData(slug, locale);
 
   return {
@@ -21,7 +27,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     },
   };
 }
-
 export default async function Page({ params }: any) {
   const { locale, slug } = await params;
   const t = await getTranslations("services");

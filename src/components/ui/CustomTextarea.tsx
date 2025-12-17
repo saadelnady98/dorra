@@ -9,6 +9,7 @@ interface CustomTextareaProps {
   error?: string;
   icon?: React.ReactNode;
   locale?: string;
+  
 }
 
 const CustomTextarea: React.FC<CustomTextareaProps> = ({

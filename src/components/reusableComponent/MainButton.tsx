@@ -6,7 +6,7 @@ interface MainLinkProps {
   styleMe?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
-}
+ }
 
 const MainButton = (params: MainLinkProps) => {
 
@@ -22,7 +22,7 @@ const MainButton = (params: MainLinkProps) => {
           : ""
       } `}
       type={params?.type ? params?.type : "button"}
-    >
+     >
       {children}
     </button>
   );

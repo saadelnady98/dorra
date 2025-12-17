@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInput from "@/components/ui/CustomInput";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import CostumPhoneInput from "@/components/reusableComponent/PhoneInput";
 import MainButton from "@/components/reusableComponent/MainButton";
 import { useMutation } from "@tanstack/react-query";
@@ -15,13 +15,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import toast from "react-hot-toast";
 import { removeCart } from "@/store/slices/cartSlice";
+import PaymentModal from "../reusableComponent/PaymentModal";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import { useSearchParams } from "next/navigation";
 
- const getFormSchema = (t: any) =>
+const getFormSchema = (t: any) =>
   z.object({
     firstName: z.string().min(1, t("first_name_required")),
     lastName: z.string().min(1, t("last_name_required")),
     email: z.string().email(t("invalid_email")),
-    phone: z.string().min(1, t("phone_required")),
+    phone: z
+      .string()
+      .min(1, t("phone_required"))
+      .refine((val) => isValidPhoneNumber(val), {
+        message: t("invalid_phone"),
+      }),
+
     message: z.string().min(1, t("message_required")),
   });
 
@@ -36,8 +45,12 @@ const CartForm = ({
 }) => {
   const t = useTranslations("Cart");
   const { cart } = useSelector((state: RootState) => state.cart);
-  const dispatch = useDispatch();
 
+  const [open, setOpen] = useState(false);
+  const [type, setType] = useState<"success" | "fail">("success");
+  const locale = useLocale();
+  const dispatch = useDispatch();
+  const searchParams = useSearchParams();
   const formSchema = getFormSchema(t);
 
   const {
@@ -52,29 +65,48 @@ const CartForm = ({
 
   const { mutate } = useMutation({
     mutationFn: (data: any) =>
-      apiServiceCall({ url: "cart/checkout", body: data, method: "POST" }),
+      apiServiceCall({
+        url: "cart/checkout",
+        body: data,
+        method: "POST",
+        headers: {
+          "Accept-Language": locale,
+        },
+      }),
     onError: (err: any) => {
       const msg =
         err?.errors?.message ||
         err?.message ||
-        t("something_went_wrong", { fallback: "Something went wrong, please try again / حدث خطأ، يرجى المحاولة مرة أخرى" });
+        t("something_went_wrong", {
+          fallback:
+            "Something went wrong, please try again / حدث خطأ، يرجى المحاولة مرة أخرى",
+        });
       toast.error(msg);
+      // setType("fail");
+      // setOpen(true);
     },
-    onSuccess: () => {
-      toast.success(t("sent_successfully"));
-      dispatch(removeCart());
+    onSuccess: (res: any) => {
+      // console.log("respponse on success >>", res);
+      window.open(res?.data?.data?.payment_url, "_blank");
+
+      // toast.success(t("sent_successfully"));
+      // setType("success");
+      // setOpen(true);
+      // dispatch(removeCart());
       reset();
     },
   });
 
   const onSubmit = (data: FormData) => {
-    let room_reservations = cart?.map((item) => ({
-      room_id: item?.id,
-      checkin_date: item?.checkin_date,
-      checkout_date: item?.checkout_date,
-      adults: item?.adults,
-      ages: item?.ages?.length,
-    }));
+    let room_reservations = cart?.flatMap((item) =>
+      Array.from({ length: item.quantity || 1 }).map(() => ({
+        room_id: item.id,
+        checkin_date: item.checkin_date,
+        checkout_date: item.checkout_date,
+        adults: item.adults,
+        ages: item.ages?.length,
+      }))
+    );
 
     const formData = new FormData();
     formData.append("name", `${data.firstName} ${data.lastName}`);
@@ -82,19 +114,46 @@ const CartForm = ({
     formData.append("phone", data.phone);
     formData.append("message", data.message);
 
-    room_reservations?.forEach(
-      (reservation, index) => {
-        formData.append(`room_reservations[${index}][room_id]`, reservation.room_id.toString());
-        formData.append(`room_reservations[${index}][checkin_date]`, reservation.checkin_date.toString().split("T")[0]);
-        formData.append(`room_reservations[${index}][checkout_date]`, reservation.checkout_date.toString().split("T")[0]);
-        formData.append(`room_reservations[${index}][adults]`, reservation.adults.toString());
-        formData.append(`room_reservations[${index}][ages]`, reservation.ages.toString());
-      }
-    );
+    room_reservations?.forEach((reservation, index) => {
+      formData.append(
+        `room_reservations[${index}][room_id]`,
+        reservation.room_id.toString()
+      );
+
+      formData.append(
+        `room_reservations[${index}][checkin_date]`,
+        reservation.checkin_date.toString().split("T")[0]
+      );
+      formData.append(
+        `room_reservations[${index}][checkout_date]`,
+        reservation.checkout_date.toString().split("T")[0]
+      );
+      formData.append(
+        `room_reservations[${index}][adults]`,
+        reservation.adults.toString()
+      );
+      formData.append(
+        `room_reservations[${index}][ages]`,
+        reservation.ages.toString()
+      );
+    });
 
     mutate(formData);
   };
 
+  useEffect(() => {
+    const paymentStatus = searchParams.get("payment");
+
+    if (paymentStatus === "success") {
+      setType("success");
+      setOpen(true);
+      dispatch(removeCart());
+      reset();
+    } else if (paymentStatus === "fail") {
+      setType("fail");
+      setOpen(true);
+    }
+  }, [searchParams]);
   return (
     <form
       className="w-full bg-white bg-opacity-5 p-5 rounded-3xl border border-[#FFFFFF33]"
@@ -138,12 +197,11 @@ const CartForm = ({
             label={t("phone_number")}
             value={field.value}
             onChange={field.onChange}
+            locale={locale}
+            errMessage={errors.phone?.message}
           />
         )}
       />
-      {errors.phone && (
-        <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-      )}
 
       {withMessage && (
         <CustomTextarea
@@ -165,9 +223,11 @@ const CartForm = ({
           type="submit"
           styleMe
         >
-          {t("send")}
+          {t("complete_reservation")}
         </MainButton>
       </div>
+
+      <PaymentModal open={open} type={type} onClose={() => setOpen(false)} />
     </form>
   );
 };

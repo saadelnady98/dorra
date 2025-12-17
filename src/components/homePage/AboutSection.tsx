@@ -4,7 +4,7 @@ import title from "@/public/title.svg";
 import MainLink from "@/components/reusableComponent/MainLink";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/reusableComponent/Container";
-import defaultimg from "@/public/defaultimg.webp";
+import cardFallBackImg from "@/public/card.webp";
 
 const AboutSection = async ({
   data,
@@ -28,15 +28,21 @@ const AboutSection = async ({
         <div className="relative w-full h-[300px] max-sm:max-w-[284px] sm:w-[321px] lg:w-[585px] xl:w-[505px] sm:h-[378px] lg:h-[353px] xl:h-[420px] 2xl:h-[580px] mt-8 lg:mt-0">
           <div className="relative w-full h-full">
             <Image
-              src={data?.image?.original_url || defaultimg}
+              src={data?.image?.original_url ?? cardFallBackImg}
               alt="Durra Taiba Hotel"
-              width={700}
-              height={600}
-              quality={80}
-              priority
-              loading="eager"
-              className="object-cover h-full w-full rounded-t-[49%]"
+              fill
+              quality={65}
+              loading="lazy"
+              sizes="
+  (max-width: 640px) min(100vw, 284px),
+  (max-width: 768px) min(100vw, 321px),
+  (max-width: 1024px) min(100vw, 585px),
+  (max-width: 1280px) min(100vw, 505px),
+  min(100vw, 580px)
+"
+              className="object-cover rounded-t-[49%]"
             />
+
             <div className="absolute left-0 bottom-0 h-full w-full rounded-t-[49%] bg-[#CAB16C] opacity-35 -translate-x-2 translate-y-2 -z-10" />
           </div>
         </div>
@@ -47,7 +53,7 @@ const AboutSection = async ({
             <div className="flex flex-col lg:flex-col-reverse items-center lg:items-start lg:justify-start gap-2 lg:gap-4">
               <div className="w-[42px] lg:w-16 mb-2 lg:mb-0 order-first lg:order-last">
                 <Image
-                  src={title || defaultimg}
+                  src={title ?? cardFallBackImg}
                   alt="ornament"
                   width={42}
                   height={9}

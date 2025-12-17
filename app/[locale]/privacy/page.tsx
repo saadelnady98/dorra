@@ -5,8 +5,7 @@ import pic1 from "@/public/card.webp";
 import { getPrivacyData } from "@/lib/serverActions";
 import { Metadata } from "next";
 
-
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata(props: any): Promise<Metadata> {
   const t = await getTranslations("meta");
   return {
     title: t("privacy.title"),
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 }
 
 export default async function Page({ params }: any) {
-  const { locale } = await params;
+  const { locale } = params;
   const t = await getTranslations("privacy");
 
   const data = await getPrivacyData(locale);

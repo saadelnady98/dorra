@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { DatePickerWithRange } from "./RangeDatepiker";
-import Guests from "./Gustes";
+import Guests, { Counter } from "./Gustes";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -13,7 +13,8 @@ import { useDispatch } from "react-redux";
 import { addCartItem, updateCartItem } from "@/store/slices/cartSlice";
 import apiServiceCall from "@/lib/apiServiceCall";
 import { formatDate } from "@/lib/utils";
-
+import { CartItem } from "@/store/slices/types";
+import { useLocale } from "next-intl";
 interface ReservationModalProps {
   defaultValues: any;
   onClose: () => void;
@@ -37,6 +38,8 @@ const ReservationModal: React.FC<ReservationModalProps> = ({
   const translation = useTranslations("filter");
   const dispatch = useDispatch();
   const [isPending, setIsPending] = useState(false);
+  const [quantity, setQuantity] = useState(defaultValues?.quantity || 1);
+  const locale = useLocale();
   const defaultDateValue =
     defaultValues?.checkin_date && defaultValues?.checkout_date
       ? {
@@ -62,17 +65,24 @@ const ReservationModal: React.FC<ReservationModalProps> = ({
       adults: data?.adults,
       children: data?.ages?.length,
     };
-
+    const hasZeroAge = (data.ages || []).includes("0");
+    if (hasZeroAge) {
+      return; 
+    }
     try {
       setIsPending(true);
       const res = await apiServiceCall({
         url: "cart",
         method: "POST",
         body: bodyForAPI,
+        headers: {
+          "Accept": "application/json",
+          "Accept-Language": locale,
+        },
       });
 
       if (res?.data?.status) {
-        const cartItem = {
+        const cartItem: CartItem = {
           id: defaultValues?.id,
           images: defaultValues?.images,
           checkin_date: formatDate(data?.date?.from),
@@ -82,8 +92,16 @@ const ReservationModal: React.FC<ReservationModalProps> = ({
           children: data?.ages?.length,
           price_per_night: defaultValues?.price_per_night,
           room_type: defaultValues?.room_type,
+          hotel: hotelData || selectedRoom?.hotel,
         };
-        cartItem.hotel = hotelData || selectedRoom?.hotel;
+
+        if (res.data.data.available_rooms >= quantity) {
+          cartItem.quantity = quantity;
+        } else {
+          cartItem.quantity = res.data.data.available_rooms;
+          toast.error(t("quantity_exceeded"));
+          return;
+        }
 
         if (editmode && indexToUpdateCartInlocalstorage !== undefined) {
           dispatch(
@@ -115,7 +133,11 @@ const ReservationModal: React.FC<ReservationModalProps> = ({
       setIsPending(false);
     }
   };
-
+  useEffect(() => {
+    if (editmode) {
+      setQuantity(defaultValues?.quantity || 1);
+    }
+  }, [editmode, defaultValues?.quantity]);
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-[999] p-4">
       <div
@@ -191,8 +213,25 @@ const ReservationModal: React.FC<ReservationModalProps> = ({
               <label className="block text-white text-lg font-semibold mb-4">
                 {translation("date")}
               </label>
-              <DatePickerWithRange control={control} watch={watch} />
+              <DatePickerWithRange
+                control={control}
+                watch={watch}
+                lang={locale}
+              />
             </div>
+
+            {editmode && (
+              <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                <Counter
+                  label={t("quantity")}
+                  value={quantity}
+                  min={1}
+                  max={100}
+                  onIncrement={() => setQuantity((prev: number) => prev + 1)}
+                  onDecrement={() => setQuantity((prev: number) => prev - 1)}
+                />
+              </div>
+            )}
 
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
               <label className="block text-white text-lg font-semibold mb-4">

@@ -15,6 +15,7 @@ export default async function Page({ params }: any) {
         className="!mt-24"
         title={t("title")}
         description={t("description")}
+        description2={t("description2")}
       />
 
       <div className="flex flex-col lg:flex-row gap-5">

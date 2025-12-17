@@ -1,24 +1,28 @@
-const createNextIntlPlugin = require("next-intl/plugin");
+import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin("./i18n.ts");
+ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
   images: {
     remotePatterns: [
       {
-        hostname: "**", // Replace with your hostname
-        // Replace with your image path or use `/**` for all paths
+        protocol: "https",
+        hostname: "dashboard.dorrattaybah.com",
+        pathname: "/storage/**",
+      },
+      {
+        protocol: "https",
+        hostname: "dash-dorrataiba.tetane.com",
+        pathname: "/storage/**",
       },
     ],
   },
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
 };
 
-module.exports = withNextIntl(nextConfig);
+export default withNextIntl(nextConfig);

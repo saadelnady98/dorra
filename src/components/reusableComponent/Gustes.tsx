@@ -66,13 +66,16 @@ const Guests = ({ watch, setValue, getValues }: GuestsProps) => {
     const childrenCount = (watch("ages") || []).length;
 
     if (adults > 0 && childrenCount > 0) {
-      return `${adults} ${t("adults")} ${t("and")} ${childrenCount} ${t("children")}`;
+      return `${adults} ${t("adults")} ${t("and")} ${childrenCount} ${t(
+        "children"
+      )}`;
     } else if (adults > 0) return `${adults} ${t("adults")}`;
     else if (childrenCount > 0) return `${childrenCount} ${t("children")}`;
     return `0 ${t("guests")}`;
   };
 
-  const hasGuests = (watch("adults") || 0) > 0 || (watch("ages") || []).length > 0;
+  const hasGuests =
+    (watch("adults") || 0) > 0 || (watch("ages") || []).length > 0;
 
   return (
     <div className="relative">
@@ -126,7 +129,9 @@ const Guests = ({ watch, setValue, getValues }: GuestsProps) => {
           {/* Children Ages */}
           {(watch("ages") || []).length > 0 && (
             <div className="mt-4">
-              <h4 className="text-white text-sm font-medium mb-3">{t("children_ages")}</h4>
+              <h4 className="text-white text-sm font-medium mb-3">
+                {t("children_ages")}
+              </h4>
               <div className="grid grid-cols-3 gap-3">
                 {getValues("ages").map((age: any, index: number) => (
                   <AgeSelect
@@ -140,7 +145,9 @@ const Guests = ({ watch, setValue, getValues }: GuestsProps) => {
                 ))}
               </div>
               {isError && (
-                <p className="text-red-400 text-xs mt-2">{t("please_select_all_ages")}</p>
+                <p className="text-red-400 text-xs mt-2">
+                  {t("please_select_all_ages")}
+                </p>
               )}
             </div>
           )}
@@ -159,7 +166,14 @@ interface CounterProps {
   max: number;
 }
 
-const Counter = ({ label, value, onIncrement, onDecrement, min, max }: CounterProps) => (
+export const Counter = ({
+  label,
+  value,
+  onIncrement,
+  onDecrement,
+  min,
+  max,
+}: CounterProps) => (
   <div className="flex justify-between items-center px-4 py-2">
     <span className="text-white text-sm font-medium">{label}</span>
     <div className="flex items-center gap-4">
@@ -170,7 +184,9 @@ const Counter = ({ label, value, onIncrement, onDecrement, min, max }: CounterPr
       >
         -
       </button>
-      <span className="text-white min-w-8 text-center font-medium">{value}</span>
+      <span className="text-white min-w-8 text-center font-medium">
+        {value}
+      </span>
       <button
         className="text-white text-lg bg-transparent rounded-full w-7 h-7 flex justify-center items-center border border-white hover:bg-white hover:text-[#CAB16C] transition-colors duration-200 disabled:opacity-50"
         onClick={onIncrement}

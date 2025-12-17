@@ -18,8 +18,8 @@ const NearbyLandmarks = async ({ data }: any) => {
           </span>
         </span>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {data?.map((item, index) => (
-            <div key={item?.id} className="flex flex-col gap-3">
+          {data?.map((item: any, index: number) => (
+            <div key={index} className="flex flex-col gap-3">
               <div className="aspect-[1/1] rounded-[20px] overflow-hidden max-h-[220px] sm:max-h-[290px] md:max-h-[320px] lg:max-h-[290px]">
                 <Image
                   src={item?.image?.original_url || defaultimg}

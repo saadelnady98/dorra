@@ -1,14 +1,24 @@
 import Banner from "@/components/reusableComponent/Banner";
 import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
-import { getServicesData, getSingleBlogData } from "@/lib/serverActions";
-import HomeSlider from "@/components/homePage/HomeSlider";
+import { getSingleBlogData } from "@/lib/serverActions";
 import defaultimg from "@/public/defaultimg.webp";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const { locale, slug } = await params;
+/* ================= TYPES ================= */
+type Props = {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+};
+
+/* ================= METADATA ================= */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params; // ✅ لازم await عشان params Promise
+
   const singleBlog = await getSingleBlogData(slug, locale);
+
   return {
     title: singleBlog?.data?.title,
     description: singleBlog?.data?.description,
@@ -22,27 +32,15 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: any) {
-  const { locale, slug } = await params;
+/* ================= PAGE ================= */
+export default async function Page({ params }: Props) {
+  const { locale, slug } = await params; // ✅ await عشان params Promise
+
   const t = await getTranslations("services");
-
   const data = await getSingleBlogData(slug, locale);
-
 
   return (
     <Container className="!pt-[100px]">
-      {/* {data?.data?.images?.length === 1 && (
-        <Banner
-          img={data?.data?.images?.[0]?.original_url|| defaultimg}
-          title={""}
-          description={""}
-          withoutShadow
-        />
-      )}
-      {data?.data?.images?.length > 1 && (
-        <HomeSlider imagesOnly data={data?.data} />
-      )} */}
-
       <div>
         <span className="text-base font-light mb-4">{data?.data?.date}</span>
         <h3 className="text-[18px] lg:text-[40px] lg:font-medium">
@@ -51,7 +49,6 @@ export default async function Page({ params }: any) {
       </div>
 
       <Banner
-        // img={data?.data?.images?.[0]?.original_url || defaultimg}
         img={data?.data?.image?.original_url || defaultimg}
         title={""}
         description={""}
@@ -60,7 +57,11 @@ export default async function Page({ params }: any) {
       />
 
       <div className="mt-[35px]">
-        <p dangerouslySetInnerHTML={{ __html: data?.data?.description }} />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: data?.data?.description,
+          }}
+        />
       </div>
     </Container>
   );

@@ -8,8 +8,8 @@ interface HotelImageGridProps {
   openModal?: () => void;
   showPhotoText: string;
   fallbackImages: {
-    main: string;
-    others: string;
+    main: any
+    others: any;
   };
   isOriginalUrl?: boolean;
 }
@@ -22,8 +22,8 @@ const HotelImageGrid = ({
   fallbackImages,
   isOriginalUrl = false,
 }: HotelImageGridProps) => {
-   const locale = useLocale();
-   const getImageSrc = (image: any, fallback: string) => {
+  const locale = useLocale();
+  const getImageSrc = (image: any, fallback: string) => {
     if (isOriginalUrl) {
       return image?.original_url || fallback;
     }
@@ -37,9 +37,8 @@ const HotelImageGrid = ({
     >
       {/* --------------- hidden for mobile | visible for desktop --------------- */}
       <div
-        className={`hidden lg:grid grid-cols-2 gap-2 rounded-[24px] overflow-hidden ${
-          cardStyle ? "h-full" : "min-h-[470px]"
-        }`}
+        className={`hidden lg:grid grid-cols-2 gap-2 rounded-[24px] overflow-hidden ${cardStyle ? "h-full" : "min-h-[470px]"
+          }`}
       >
         <div className="grid grid-cols-2 gap-2 h-full overflow-hidden">
           {images?.slice(1, 5)?.map((image, index) => {
@@ -66,9 +65,8 @@ const HotelImageGrid = ({
             }
             return (
               <div
-                className={`relative ${
-                  index + 1 === 3 ? `order-4` : "order-1"
-                } overflow-hidden`}
+                className={`relative ${index + 1 === 3 ? `order-4` : "order-1"
+                  } overflow-hidden`}
                 key={index}
               >
                 <Image

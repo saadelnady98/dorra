@@ -22,9 +22,10 @@ const Rooms = ({
 }: {
   data: any;
   isLoading?: boolean;
+  hotelData: any;
 }) => {
   const t = useTranslations("SingleHotelPage");
-  const [isModalOpen, setIsModalOpen] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState<string | null>(null);
   const [selectedRoom, setSelectedRoom] = useState<any>(null);
 
   const openModal = (modulName: string) => {

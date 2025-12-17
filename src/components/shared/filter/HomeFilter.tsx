@@ -79,35 +79,29 @@ const HomeFilter = ({
 
     const params: Record<string, string> = {};
 
-    // Adults
     if (data.adults && data.adults !== 0) {
       params.adults = String(data.adults);
     }
 
-    // Hotel ID
     if (fixedHotelId) {
       params.hotel_id = String(fixedHotelId);
     } else if (data.hotel_id) {
       params.hotel_id = data.hotel_id;
     }
 
-    // Dates
     if (data.date && data.date.from && data.date.to) {
       params.checkin_date = formatDate(data.date.from);
       params.checkout_date = formatDate(data.date.to);
     }
 
-    // Ages
     if (data.ages && data.ages.length > 0) {
       params.ages = data.ages.join(",");
     }
 
-    // Room type
     if (filterMode === "rooms" && data.roomtype_id) {
       params.roomtype_id = data.roomtype_id;
     }
 
-    // Handle different filter modes
     if (filterMode === "hotels") {
       const urlParams = new URLSearchParams(params);
       router.push(`/${locale}/hotels?${urlParams}`);
@@ -139,8 +133,8 @@ const HomeFilter = ({
     if (searchParams.size > 0) {
       reset({
         date: parseCheckInOutDates(
-          searchParams.get("checkin_date"),
-          searchParams.get("checkout_date")
+          searchParams.get("checkin_date") ,
+          searchParams.get("checkout_date") 
         ),
         hotel_id: fixedHotelId
           ? String(fixedHotelId)
@@ -267,15 +261,14 @@ const HomeFilter = ({
             type="button"
             onClick={handleResetFilters}
             disabled={isLoading}
-            className={`flex items-center justify-center rounded-full font-bold p-4 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
-              hasValues 
-                ? "bg-[#CAB16C] text-white hover:bg-[#b89d5a]" 
+            className={`flex items-center justify-center rounded-full font-bold p-4 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${hasValues
+                ? "bg-[#CAB16C] text-white hover:bg-[#b89d5a]"
                 : "bg-white text-[#CAB16C] hover:bg-[#CAB16C] hover:text-white"
-            }`}
+              }`}
           >
             <ResetIcon />
           </button>
-          
+
           <button
             type="submit"
             onClick={handleSubmit(onSubmit)}
@@ -291,4 +284,3 @@ const HomeFilter = ({
 };
 
 export default HomeFilter;
-      

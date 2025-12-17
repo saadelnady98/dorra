@@ -1,4 +1,9 @@
 import axios from "axios";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://dashboard.dorrattaybah.com/api/"
+    : "https://dash-dorrataiba.tetane.com/api/";
+
 const apiServiceCall = async ({
   url,
   method,
@@ -10,14 +15,14 @@ const apiServiceCall = async ({
   body?: any;
   headers?: any;
 }) => {
-
   try {
     const response = await axios({
       method: method?.toUpperCase() || "GET",
-      url: `${process.env.NEXT_PUBLIC_API_URL}${url}`,
-      data: body, // Replace body with data
+      url: `${baseUrl}${url}`,
+      data: body,
       headers: {
         "Content-Type": "application/json",
+        "Accept-Language": "en",
         ...headers,
       },
       // Spread any custom config passed to the function

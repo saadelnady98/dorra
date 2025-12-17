@@ -7,6 +7,14 @@ import SectionTitle from "@/components/reusableComponent/SectionTitle";
 import { getTranslations } from "next-intl/server";
 import cardFallBackImg from "@/public/card.webp";
 import { cn } from "@/lib/utils";
+type BlogItem = {
+  slug: string;
+  title: string;
+  description: string;
+  image?: {
+    original_url?: string;
+  };
+};
 
 interface BlogsSectionProps {
   data: any;
@@ -186,7 +194,7 @@ const BlogsSection = async ({
             )}
 
             {data?.length === 2 &&
-              data?.map((item, index) => (
+              data?.map((item: BlogItem, index: number) => (
                 <div key={index} className="relative w-full h-fit group">
                   <div className=" inset-0 bg-white/5 border border-white/20 rounded-[24px] lg:h-full">
                     <div className="p-4 flex flex-col h-full">
@@ -254,6 +262,8 @@ const BlogsSection = async ({
                         className="object-cover h-[353px] rounded-[24px] border border-white/20"
                         width={656}
                         height={353}
+                        priority
+                        loading="eager"
                       />
                     </MainLink>
 

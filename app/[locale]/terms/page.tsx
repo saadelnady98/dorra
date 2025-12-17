@@ -3,9 +3,8 @@ import Container from "@/components/reusableComponent/Container";
 import { getTranslations } from "next-intl/server";
 import pic1 from "@/public/card.webp";
 import { getTermsData } from "@/lib/serverActions";
-import { Metadata } from "next";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata() {
   const t = await getTranslations("meta");
   return {
     title: t("terms.title"),

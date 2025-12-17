@@ -6,14 +6,16 @@ import title from "@/public/title.svg";
 
 interface SectionTitleProps {
   title: string;
-  description?: string;
+  description?: string | null;
   imageUrl?: string;
   className?: string;
+  description2?: string;
 }
 
 const SectionTitle = ({
   title: titleText,
   description,
+  description2,
   imageUrl,
   className,
 }: SectionTitleProps) => {
@@ -32,7 +34,9 @@ const SectionTitle = ({
             />
           </div>
           {/* Title */}
-          <h2 className="text-[#CAB16C] text-2xl mb-2  capitalize">{titleText ? titleText.split("_").join(" ") : ""}</h2>
+          <h2 className="text-[#CAB16C] text-2xl mb-2  capitalize">
+            {titleText ? titleText.split("_").join(" ") : ""}
+          </h2>
         </div>
 
         {/* description */}
@@ -41,10 +45,15 @@ const SectionTitle = ({
             {description}
           </p>
         )}
+        {/* description2 */}
+        {description2 && (
+          <p className="description max-w-[725px] text-white text-base md:text-xl description mt-2">
+            {description2}
+          </p>
+        )}
       </div>
     </div>
   );
 };
 
 export default SectionTitle;
-

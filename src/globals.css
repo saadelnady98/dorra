@@ -141,3 +141,34 @@ body {
     transition: none !important;
   }
 }
+
+.otpModal {
+  /* globals.css */
+  padding: 20px;
+  .otpButton {
+    color: #fff;
+    /*border-radius: 20px !important;
+    */
+    box-shadow: none;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    border: none;
+    border-radius: 10px !important;
+    /*-webkit-border-radius: 20px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+    */
+    -webkit-border-radius: 10px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-border-radius: 10px !important;
+  }
+
+  .otpButton:focus {
+    border-color: #fff;
+    outline: none;
+  }
+}

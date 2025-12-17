@@ -36,6 +36,10 @@ const Footer: React.FC = async (params: any) => {
       href: "faqs",
       text: t("FAQ"),
     },
+    {
+      href: "reservations",
+      text: t("reservations"),
+    },
   ];
 
   const legalLinks = [

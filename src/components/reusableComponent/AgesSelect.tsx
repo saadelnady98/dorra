@@ -25,15 +25,22 @@ export default function AgeSelect({
   error,
   value,
 }: {
-  onChange: (error: boolean, vlaue: string, index: number) => void;
+  onChange: (value: string, index: number, error?: boolean) => void;
   index: number;
   label?: string;
   placeholder?: string;
   options: SelectTypes[];
   value: string;
+  error?: boolean;
 }) {
   return (
-    <Select value={value} onValueChange={(value) => onChange(value, index)}>
+    <Select
+      value={value}
+      onValueChange={(value) => {
+        
+        onChange(value, index, error);
+      }}
+    >
       {label && <label className="flex mb-2">{label}</label>}
       <SelectTrigger
         className={` w-full   ${

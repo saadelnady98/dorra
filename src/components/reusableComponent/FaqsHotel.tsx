@@ -44,12 +44,11 @@ function FaqsHotel({
   data: any;
   hiddenTitle?: boolean;
 }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     setActiveIndex((prevState) => (prevState === index ? null : index));
   };
-
   const t = useTranslations("FaqsHotel");
 
   return (
@@ -66,7 +65,7 @@ function FaqsHotel({
       </div>
 
       <div>
-        {data?.map((item, index) => (
+        {data?.map((item: any, index: number) => (
           <div
             key={index}
             data-aos="fade-up"

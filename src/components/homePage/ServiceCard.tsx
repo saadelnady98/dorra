@@ -1,11 +1,13 @@
 import Image from "next/image";
-import header from "@/public/header.webp";
+import cardFallBack from "@/public/card.webp";
 
 import MainLink from "../reusableComponent/MainLink";
+import { memo } from "react";
 
 type ServiceCardProps = {
   service: {
-    id: number | string;
+    id: string | number;
+    slug: string;
     name: string;
     description: string;
     image?: {
@@ -23,13 +25,14 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
     >
       {/* Background Image */}
       <Image
-        src={service?.image?.original_url ?? header}
+        src={service?.image?.original_url ?? cardFallBack}
         alt={service.name || "Service image"}
-        width={600}
-        height={500}
-        loading="eager"
-        quality={75}
+        width={500}
+        height={400}
+        loading="lazy"
+        quality={60}
         className="object-cover w-full h-full"
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
 
       {/* Gradient Overlay */}
@@ -51,4 +54,4 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
   );
 };
 
-export default ServiceCard;
+export default memo(ServiceCard);

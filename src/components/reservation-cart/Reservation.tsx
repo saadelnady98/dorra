@@ -12,7 +12,7 @@ const options: SelectTypes[] = Array.from({ length: 18 }, (_, i) => ({
   value: i.toString(),
   label: i.toString(),
 }));
-const Reservation = ({ open, close }) => {
+const Reservation = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isError, setIsError] = useState(false);
   const [adultCount, setAdultCount] = useState(2);
@@ -73,6 +73,7 @@ const Reservation = ({ open, close }) => {
   };
 
   const agesHandler = (value: string, index: number) => {
+    
     const newAges = [...ages];
     newAges[index] = value;
     setAges(newAges);
@@ -85,7 +86,7 @@ const Reservation = ({ open, close }) => {
           width={500}
           height={500}
           alt="location"
-           className="aspect-[1/1] w-[171px] h-[171px] object-cover rounded-3xl"
+          className="aspect-[1/1] w-[171px] h-[171px] object-cover rounded-3xl"
         />
         <div className="flex flex-col justify-between gap-4 py-2">
           <div>
@@ -94,7 +95,6 @@ const Reservation = ({ open, close }) => {
             </span>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-20">
               <div className="flex gap-2">
-           
                 <Image
                   src={trash || defaultimg}
                   width={50}
@@ -177,7 +177,7 @@ const Reservation = ({ open, close }) => {
                 </div>
               </div>
               <div className="grid grid-cols-4 gap-4 mt-3">
-                {ages?.map((age: any, index: string) => {
+                {ages?.map((age: any, index: number) => {
                   return (
                     <div key={index} className="col-span-3 w-full">
                       <AgeSelect

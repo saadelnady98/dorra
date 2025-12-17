@@ -13,8 +13,8 @@ export const formatDate = (dateString: any) => {
   return `${year}-${month}-${day}`;
 };
 
-export const parseCheckInOutDates = (checkIn: string, checkOut: string) => {
-  const parseDate = (dateString: string) => {
+export const parseCheckInOutDates = (checkIn: string | null,  checkOut: string | null) => {
+  const parseDate = (dateString: string | null) => {
     if (!dateString) return null;
 
     const [year, month, day] = dateString.split("-").map(Number);
@@ -121,7 +121,7 @@ export const formatDateToMonthDay = (
 export const formatDateRange = (
   checkin: string,
   checkout: string,
-  locale: "ar" | "en"
+  locale: string
 ) => {
   const parse = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -186,3 +186,26 @@ export const formatDateRange = (
     ? `${dayStart} ${monthNameStart} – ${dayEnd} ${monthNameEnd}`
     : `${monthNameStart} ${dayStart} – ${monthNameEnd} ${dayEnd}`;
 };
+
+
+
+export const getValidRefundToken = () => {
+  const raw = localStorage.getItem("refund_auth");
+  if (!raw) return null;
+
+  try {
+    const { token, expiresAt } = JSON.parse(raw);
+
+    if (Date.now() > expiresAt) {
+      localStorage.removeItem("refund_auth");
+      return null;
+    }
+
+    return token;
+  } catch {
+    localStorage.removeItem("refund_auth");
+    return null;
+  }
+};
+
+

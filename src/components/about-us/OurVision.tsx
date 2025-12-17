@@ -1,6 +1,13 @@
 import SectionTitle from "../reusableComponent/SectionTitle";
+interface VisionItem {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 
 const OurVision = ({ data, className }: { data: any; className?: string }) => {
+ 
   return (
     <div
       className={`mx-auto mb-[100px] ${className || ""}`}
@@ -8,7 +15,7 @@ const OurVision = ({ data, className }: { data: any; className?: string }) => {
       data-aos-duration="1000"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {data?.map((item) => (
+        {data?.map((item: VisionItem) => (
           <div
             key={item?.id}
             className="bg-[#1C1B19] flex flex-col items-center text-center

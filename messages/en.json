@@ -50,7 +50,8 @@
     "All Rights Reserved": "All Rights Reserved",
     "Main Links": "Main Links",
     "Privacy Policy": "Privacy Policy",
-    "Terms & Conditions": "Rights and Terms"
+    "Terms & Conditions": "Rights and Terms",
+    "reservations": "My Reservations"
   },
   "home": {
     "hero": {
@@ -230,7 +231,11 @@
     "last_name_required": "Last name is required",
     "invalid_email": "Invalid email format",
     "message_required": "Message is required",
-    "something_went_wrong": "Something went wrong, please try again"
+    "something_went_wrong": "Something went wrong, please try again",
+    "quantity": "Quantity",
+    "complete_reservation": "Complete reservation",
+    "description2": "All room prices already include VAT and service charges. No additional fees",
+    "quantity_exceeded": "You reached the maximum number of rooms"
   },
   "blog": {
     "title": "Blog",
@@ -365,5 +370,60 @@
     "message_required": "Message is required",
     "loading": "Loading",
     "send": "Send"
+  },
+  "paymentSuccess": {
+    "title": "Payment Successful",
+    "description": "Thank you! Your payment has been confirmed and the details will be sent to your email.",
+    "backHome": "Back to Home"
+  },
+  "paymentFail": {
+    "title": "Payment Failed",
+    "description": "Sorry, your payment could not be completed. Please try again or use a different payment method.",
+    "backHome": "Back to Home"
+  },
+  "payment": {
+    "successTitle": "Payment Successful",
+    "successDesc": "Thank you! Your payment has been confirmed and the details will be sent to your email.",
+    "successBtn": "Back to Home",
+    "failTitle": "Payment Failed",
+    "failDesc": "Something went wrong during the payment. Try again.",
+    "failBtn": "Back to Home"
+  },
+  "Reservations": {
+    "title": "All reservations",
+    "description": "Please enter your email to view your reservation details",
+    "send": "Send",
+    "no_reservations_found": "No reservations found",
+    "invalid_email": "Invalid email format",
+    "email_required": "Email is required",
+    "adults": "Adults",
+    "children": "Children",
+    "sar": "SAR",
+    "night": "Night",
+    "email": "Email",
+    "enter_otp": "Enter the OTP Code",
+    "otp_sent_message": "A verification code has been sent to your email.",
+    "otp_placeholder": "Enter the OTP",
+    "verify": "Verify",
+    "otp_verified": "OTP verified successfully!",
+    "otp_length_error": "Please enter the full code that was sent to your email.",
+    "enterEmail": "Please enter your email",
+    "loading": "Loading ...",
+    "session_expired": "Session expired, please try again",
+    "something_went_wrong": "Something went wrong, please try again later",
+    "reservation_date": "Reservation Date",
+    "status": "Status",
+    "refund": "Refund",
+    "user_details": "User details",
+    "name": "Name",
+    "phone": "Phone",
+    "total_cost": "Total",
+    "cancel_reservation": "Cancel Reservation",
+    "confirm_cancel_reservation": "Are you sure you want to cancel this reservation?",
+    "refund_policy_title": "Important Refund Notice",
+    "refund_policy_one_day_before": "If the reservation is canceled one day before the check-in date, the first night will be deducted and the remaining amount will be refunded.",
+    "refund_policy_one_night": "If the reservation is for one day only and you cancel it one day before the check-in date, no refund will be issued.",
+    "cancel": "Back",
+    "confirm": "Confirm"
   }
 }

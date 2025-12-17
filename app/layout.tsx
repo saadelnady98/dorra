@@ -37,10 +37,13 @@ export default async function RootLayout({
       dir={currentLocale === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
-        className={`bg-[#11100D] min-h-screen ${
-          currentLocale === "ar" ? ibmPlexSansArabic.className : inter.className
-        }`}
+        className={`bg-[#11100D] min-h-screen ${currentLocale === "ar" ? ibmPlexSansArabic.className : inter.className
+          }`}
         suppressHydrationWarning
       >
         <Providers>{children}</Providers>

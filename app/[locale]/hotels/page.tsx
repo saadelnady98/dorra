@@ -6,13 +6,8 @@ import Container from "@/components/reusableComponent/Container";
 import Hotels from "@/components/hotels/Hotels";
 import { getFilterHotelsData } from "@/lib/serverActions";
 import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
 
-interface LayoutProps {
-  params: Promise<{ locale: string | any }>; // Handle both promise and object
-}
-
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata() {
   const t = await getTranslations("meta");
   return {
     title: t("hotels.title"),
@@ -25,9 +20,9 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     ],
   };
 }
-
-const page = async ({ params }: LayoutProps) => {
-  const { locale } = await params;
+export default async function Page(props: any) {
+  const params = props.params as { locale: string };
+  const locale = params.locale;
   const data = await getFilterHotelsData(locale);
 
   const t = await getTranslations("banner");
@@ -46,6 +41,4 @@ const page = async ({ params }: LayoutProps) => {
       <Hotels locale={locale} />
     </div>
   );
-};
-
-export default page;
+}

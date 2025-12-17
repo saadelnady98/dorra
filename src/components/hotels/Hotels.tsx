@@ -14,7 +14,7 @@ import HotelCardSkeleton from "./hotelCard/HotelCardSkeleton";
 const Hotels = ({ locale }: any) => {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
-  const [rating, setRating] = useState([]);
+  const [rating, setRating] = useState<string[]>([]);
   const { register, getValues, watch } = useForm();
   const t = useTranslations("filter");
   const hotelsTranslation = useTranslations("meta.hotels");
@@ -35,16 +35,22 @@ const Hotels = ({ locale }: any) => {
     refetch();
   }, [searchParams, watch("search"), rating]);
 
+  // const handleRating = (value: string) => {
+  //   const newrating = [...rating];
+  //   const index = rating.findIndex((rating) => rating === value);
+  //   if (index !== -1) {
+  //     newrating.splice(index, 1);
+  //     setRating(newrating);
+  //   } else {
+  //     newrating.push(value );
+  //     setRating(newrating);
+  //   }
+  // };
+
   const handleRating = (value: string) => {
-    const newrating = [...rating];
-    const index = rating.findIndex((rating) => rating === value);
-    if (index !== -1) {
-      newrating.splice(index, 1);
-      setRating(newrating);
-    } else {
-      newrating.push(value);
-      setRating(newrating);
-    }
+    setRating((prev) =>
+      prev.includes(value) ? prev.filter((r) => r !== value) : [...prev, value]
+    );
   };
   return (
     <Container className="!pt-0">

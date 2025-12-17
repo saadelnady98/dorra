@@ -18,8 +18,15 @@ import HotelImagesClient from "@/components/singleHotelPage/HotelImagesClient";
 import RoomsContainer from "@/components/singleHotelPage/RoomsContainer";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const { locale, slug } = await params;
+type Props = {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params; // ✅ لازم await عشان params Promise
   const singleHotel = await getSingleHotelData(slug, locale);
   return {
     title: singleHotel?.data?.name,
@@ -34,12 +41,12 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function SingleHotelPage({ params }: LayoutProps) {
-  const { locale, slug } = await params;
+export default async function SingleHotelPage(props: any) {
   const t = await getTranslations("SingleHotelPage");
 
+  const { locale, slug } = props.params as { locale: string; slug: string };
   const hotelData = await getSingleHotelData(slug, locale);
- 
+
   const tabLabels = [
     { id: "rooms", label: t("available_rooms") },
     { id: "about", label: t("about_hotel") },
