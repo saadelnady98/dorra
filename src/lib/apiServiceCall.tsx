@@ -2,7 +2,7 @@ import axios from "axios";
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://dashboard.dorrattaybah.com/api/"
-    : "https://dash-dorrataiba.tetane.com/api/";
+    : "https://dashboard.dorrattaybah.com/api/";
 
 const apiServiceCall = async ({
   url,

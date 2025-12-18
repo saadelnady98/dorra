@@ -1,6 +1,5 @@
 
 
-
 import createMiddleware from 'next-intl/middleware';
  
 export default createMiddleware({
@@ -49,7 +48,3 @@ export const config = {
 //   // Match only internationalized pathnames
 //   matcher: ['/', '/(ar|en)/:path*']
 // };
-
-
-
-
